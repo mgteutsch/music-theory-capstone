@@ -4,30 +4,43 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Music Theory Capstone</title>
-	<link rel="stylesheet" href="">
+	<link rel="stylesheet" type="text/css" href="/lib/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
 <body ng-app="MusicTheory">
 	
-	<h1>PLACEHOLDER</h1>
 
-
-
-
-
-	<!-- Later
+	<!--<div ng-include="'./partials/auth.html'"></div>-->
+	<div ng-view></div>
 	
-	<script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+
+
+
+
 	
-	Also, bootstrap tag. Don't forget to include in the link tag above, too.
-	Don't forget to do a bower install boostrap if this gets included.
+	<!--Firebase-->
+	<script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
 	
-	-->
+	<!--Installers (jquery, bootstrap, angular, & angular-route)-->
 	<script type="text/javascript" src="/lib/bower_components/jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="/lib/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>	
 	<script type="text/javascript" src="/lib/bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="/lib/bower_components/angular-route/angular-route.min.js"></script>
 
+	<!--Basic Javascripts-->
 	<script src="/javascripts/app.js"></script>
+	<script src="/javascripts/AppConstants.js"></script>
+    <script src="/javascripts/AppConfig.js"></script>
+
+    <!--Factories-->
+    <script src="/javascripts/factories/AuthFactory.js"></script>
+    <script src="/javascripts/factories/UserFactory.js"></script>
+
+    <!--Controllers-->
+    <script src="/javascripts/controllers/AuthCtrl.js"></script>
+    <script src="/javascripts/controllers/ComposerCtrl.js"></script>
 
 </body>
 </html>

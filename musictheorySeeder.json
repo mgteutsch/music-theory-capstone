@@ -1,0 +1,22 @@
+{
+	"chordProgessions":{
+		"progression0": {
+			"chords": "I,IV,V,I",
+			"uid":"TY9mlbTYGPQdk7dhqc7Mj6bZaPn2"
+		},
+		"progression1": {
+			"chords": "vi,ii,vi,ii",
+			"uid":"Pl6Xs0c2FVTttTUlPlCgQ6T4UDM2"
+		}
+	},
+	"users":{
+		"user0":{
+			"uid": "TY9mlbTYGPQdk7dhqc7Mj6bZaPn2",
+			"username": "a"
+		},
+		"user1":{
+			"uid": "Pl6Xs0c2FVTttTUlPlCgQ6T4UDM2",
+			"username": "b"
+		}
+	}
+}
