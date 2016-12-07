@@ -15,12 +15,12 @@
 	<h3>Saved Chord Progressions</h3>
 	<hr/>
 	<div ng-repeat="chordProgression in chordProgressions">
-		<div class="singleProgressionContainer">
-			<input type="text" placeholder="{{chordProgressions.chord1}}" disabled>{{chordProgressions.chord1}}
-			<input type="text" disabled>{{chordProgressions.chord2}}
-			<input type="text" disabled>{{chordProgressions.chord3}}
-			<input type="text" disabled>{{chordProgressions.chord4}}
-			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression()">Delete Template</button>
+		<div class="singleProgressionContainer" id="{{chordProgression.id}}">
+			<input type="text" placeholder="{{chordProgression.chord1}}" disabled>
+			<input type="text" placeholder="{{chordProgression.chord2}}" disabled>
+			<input type="text" placeholder="{{chordProgression.chord3}}" disabled>
+			<input type="text" placeholder="{{chordProgression.chord4}}" disabled>
+			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression(chordProgression.id)">Delete</button>
 		</div>
 	</div>
 

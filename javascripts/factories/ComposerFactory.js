@@ -42,13 +42,16 @@ app.factory("ComposerFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
-	var deleteSavedProgression = function(targetProgression){
+	var deleteSavedProgression = function(targetProgressionId){
+		console.log("targetProgressionId: ", targetProgressionId);
 		return $q((resolve, reject) => {
-			$http.delete(`${FIREBASE_CONFIG.databaseURL}/chordProgressions/${targetProgression}.json`)
+			$http.delete(`${FIREBASE_CONFIG.databaseURL}/chordProgressions/${targetProgressionId}.json`)
 			.success(function(deleteResponse){
+				console.log("deleteResponse: ", deleteResponse);
 				resolve(deleteResponse);
 			})
 			.error(function(deleteError){
+				console.log("deleteError: ", deleteError);
 				reject(deleteError);
 			});
 		});
