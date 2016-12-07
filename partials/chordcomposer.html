@@ -2,8 +2,27 @@
 
 	<h1>Chord Composer Page</h1>
 
+	<h3>Chord Progression:</h3>
+	<div>
+		<input type="text" placeholder="1" ng-model="newProgression.chord1">
+		<input type="text" placeholder="2" ng-model="newProgression.chord2">
+		<input type="text" placeholder="3" ng-model="newProgression.chord3">
+		<input type="text" placeholder="4" ng-model="newProgression.chord4">
+	</div>
+	<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression()">Save Chord Progression</button>
 
-
+	<hr/>
+	<h3>Saved Chord Progressions</h3>
+	<hr/>
+	<div ng-repeat="chordProgression in chordProgressions">
+		<div class="singleProgressionContainer">
+			<input type="text" placeholder="{{chordProgressions.chord1}}" disabled>{{chordProgressions.chord1}}
+			<input type="text" disabled>{{chordProgressions.chord2}}
+			<input type="text" disabled>{{chordProgressions.chord3}}
+			<input type="text" disabled>{{chordProgressions.chord4}}
+			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression()">Delete Template</button>
+		</div>
+	</div>
 
 
 

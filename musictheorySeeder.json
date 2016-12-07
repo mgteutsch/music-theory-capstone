@@ -1,11 +1,17 @@
 {
-	"chordProgessions":{
+	"chordProgressions":{
 		"progression0": {
-			"chords": "I,IV,V,I",
+			"chord1": "I",
+			"chord2": "IV",
+			"chord3": "V",
+			"chord4": "I",
 			"uid":"TY9mlbTYGPQdk7dhqc7Mj6bZaPn2"
 		},
 		"progression1": {
-			"chords": "vi,ii,vi,ii",
+			"chord1": "vi",
+			"chord2": "ii",
+			"chord3": "vi",
+			"chord4": "ii",			
 			"uid":"Pl6Xs0c2FVTttTUlPlCgQ6T4UDM2"
 		}
 	},
