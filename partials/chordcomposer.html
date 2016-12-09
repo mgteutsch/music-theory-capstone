@@ -3,23 +3,28 @@
 	<h1>Chord Composer Page</h1>
 
 	<h3>Chord Progression:</h3>
+	<img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF">
 	<div>
 		<input type="text" placeholder="1" ng-model="newProgression.chord1">
 		<input type="text" placeholder="2" ng-model="newProgression.chord2">
 		<input type="text" placeholder="3" ng-model="newProgression.chord3">
 		<input type="text" placeholder="4" ng-model="newProgression.chord4">
 	</div>
-	<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression()">Save Chord Progression</button>
+	<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression)">Save Chord Progression</button>
 
 	<hr/>
 	<h3>Saved Chord Progressions</h3>
 	<hr/>
 	<div ng-repeat="chordProgression in chordProgressions">
 		<div class="singleProgressionContainer" id="{{chordProgression.id}}">
-			<input type="text" placeholder="{{chordProgression.chord1}}" disabled>
-			<input type="text" placeholder="{{chordProgression.chord2}}" disabled>
-			<input type="text" placeholder="{{chordProgression.chord3}}" disabled>
-			<input type="text" placeholder="{{chordProgression.chord4}}" disabled>
+			<input type="text" ng-model="chordProgression.chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			
+			<!--Clean up -->
+			<button type="button" class="btn btn-sm doneButton" ng-hide="!buttonHider" ng-click= "editProgression(chordProgression)">Done</button>
+			<button type="button" class="btn btn-sm" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true">Edit</button>
 			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression(chordProgression.id)">Delete</button>
 		</div>
 	</div>

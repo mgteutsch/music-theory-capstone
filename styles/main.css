@@ -1,2 +1,8 @@
 h1 {
   color: blue; }
+
+#composerGIF {
+  height: 300px;
+  width: 600px;
+  border: 2px solid grey;
+  box-shadow: 5px 5px 5px lightgrey; }

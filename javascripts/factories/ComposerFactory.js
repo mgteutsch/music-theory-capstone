@@ -43,20 +43,38 @@ app.factory("ComposerFactory", function($q, $http, FIREBASE_CONFIG){
 	};
 
 	var deleteSavedProgression = function(targetProgressionId){
-		console.log("targetProgressionId: ", targetProgressionId);
 		return $q((resolve, reject) => {
 			$http.delete(`${FIREBASE_CONFIG.databaseURL}/chordProgressions/${targetProgressionId}.json`)
 			.success(function(deleteResponse){
-				console.log("deleteResponse: ", deleteResponse);
 				resolve(deleteResponse);
 			})
 			.error(function(deleteError){
-				console.log("deleteError: ", deleteError);
 				reject(deleteError);
 			});
 		});
 	};
 
+	var editSavedProgression = function(editProgression){
+		console.log("from Factory: ", editProgression);
+		return $q((resolve, reject) => {
+			$http.put(`${FIREBASE_CONFIG.databaseURL}/chordProgressions/${editProgression.id}.json`, 
+				JSON.stringify({
+					chord1: editProgression.chord1,
+					chord2: editProgression.chord2,
+					chord3: editProgression.chord3,
+					chord4: editProgression.chord4,
+					uid: editProgression.uid
+				})
+			)
+			.success(function(editResponse){
+				resolve(editResponse);
+			})
+			.error(function(editError){
+				reject(editError);
+			});	
+		});
+	};
 
-	return {getSavedProgressions:getSavedProgressions, postNewProgression:postNewProgression, deleteSavedProgression};
+
+	return {getSavedProgressions:getSavedProgressions, postNewProgression:postNewProgression, deleteSavedProgression, editSavedProgression:editSavedProgression};
 });
