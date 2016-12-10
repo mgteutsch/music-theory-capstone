@@ -8,13 +8,13 @@ app.controller("ComposerCtrl", function($scope, $rootScope, $location, ComposerF
 	//On page load, Saved Chord Progressions input fields need to be disabled:
 	$scope.buttonHider = false;
 	$scope.editDisabler = true;
-	//editProgression() below will enable the fields for editing.
 
 
-
+//GET, ADD, EDIT, & DELETE Chords:
+/**************************************************************************************************/
+	
 	let retrieveSavedProgressions = function(){
 		ComposerFactory.getSavedProgressions($rootScope.user.uid).then(function(fbProgressions){
-			//console.log("Progressions from Controller: ", fbProgressions);
 			$scope.chordProgressions = fbProgressions;
 		});
 	};
@@ -22,15 +22,7 @@ app.controller("ComposerCtrl", function($scope, $rootScope, $location, ComposerF
 
 
 
-
 	$scope.addNewProgression = function(userNewProgression){
-		//These 4 lines are not needed since I have now passed in userNewProgression:
-			// $scope.newProgression.chord1 = $scope.newProgression.chord1;
-			// $scope.newProgression.chord2 = $scope.newProgression.chord2;
-			// $scope.newProgression.chord3 = $scope.newProgression.chord3;
-			// $scope.newProgression.chord4 = $scope.newProgression.chord4;
-		//I am keeping these for learning purposes.
-		
 		userNewProgression.uid = $rootScope.user.uid;
 		ComposerFactory.postNewProgression(userNewProgression).then(function(progressionId){
 			retrieveSavedProgressions(); 
@@ -40,19 +32,15 @@ app.controller("ComposerCtrl", function($scope, $rootScope, $location, ComposerF
 
 
 
-
 	$scope.deleteProgression = function(progressionId){
-		//console.log("id from deleteProgression(): ", progressionId);
 		ComposerFactory.deleteSavedProgression(progressionId).then(function(whatever){
 			retrieveSavedProgressions();
 		});
 	};
 
 
-
 		
 	$scope.editProgression = function(chordProgression){
-		//console.log("chordProgression from editProgression(): ", chordProgression);
 		
 		//resets the input fields to disabled, and hides the Done button
 		$scope.buttonHider = false;
@@ -62,4 +50,6 @@ app.controller("ComposerCtrl", function($scope, $rootScope, $location, ComposerF
 			retrieveSavedProgressions();
 		});
 	};
+	
+/**************************************************************************************************/	
 });
