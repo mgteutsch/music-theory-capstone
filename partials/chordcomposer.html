@@ -1,16 +1,64 @@
-<div ng-controller="ComposerCtrl">
+<div>
 
 	<h1>Chord Composer Page</h1>
 
 	<h3>Chord Progression:</h3>
 	<!-- <img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF"> -->
 	<div>
-		<input type="text" placeholder="1" ng-model="newProgression.chord1">
-		<input type="text" placeholder="2" ng-model="newProgression.chord2">
-		<input type="text" placeholder="3" ng-model="newProgression.chord3">
-		<input type="text" placeholder="4" ng-model="newProgression.chord4">
+		<input type="text" placeholder="1" ng-model="newProgression.chord1" required>
+		<input type="text" placeholder="2" ng-model="newProgression.chord2" required>
+		<input type="text" placeholder="3" ng-model="newProgression.chord3" required>
+		<input type="text" placeholder="4" ng-model="newProgression.chord4" required>
+		<button type="button" class="btn btn-success btn-sm" ng-click="playProgression(newProgression)">Play</button>
+		<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression)">Save Chord Progression</button>
 	</div>
-	<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression)">Save Chord Progression</button>
+
+	<hr/>
+	<h3>Audio Test</h3>
+	<!--
+	<audio autobuffer autoloop loop controls>
+		<source src="audio/composerChords/chord-minorvi.mp3">
+		<object type="audio/mpeg" data="audio/composerChords/chord-minorvi.mp3" width="290" height="45">
+			<param name="src" value="audio/composerChords/chord-minorvi.mp3">
+			<param name="autoplay" value="false">
+			<param name="autoStart" value="0">
+		</object>
+	</audio>
+	-->
+<!--	
+			<audio ng-if="showChord" id="audio1" controls>
+				<source src="audio/composerChords/{{newProgression.chord1}}.mp3" type="audio/mpeg">
+			</audio>
+			<br/>	
+
+			<audio controls ng-if="showChord">	
+				<source src="audio/composerChords/{{newProgression.chord2}}.mp3" type="audio/mpeg">
+			</audio>
+			<br/>
+
+			<audio controls ng-if="showChord">
+				<source src="audio/composerChords/{{newProgression.chord3}}.mp3" type="audio/mpeg">
+			</audio>
+			<br/>
+
+			<audio controls ng-if="showChord">
+				<source src="audio/composerChords/{{newProgression.chord4}}.mp3" type="audio/mpeg">
+			</audio>
+-->
+<div ng-repeat="audioFile in audioFiles">
+<audio ng-if="showChord" id="audio1" ng-model="audioFile" controls>
+	
+</audio>
+</div>
+
+<div id="audio1"></div>
+
+
+
+
+</div>
+	<hr/>
+
 
 	<hr/>
 	<h3>Saved Chord Progressions</h3>
@@ -21,13 +69,10 @@
 			<input type="text" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
 			<input type="text" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
 			<input type="text" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
-			
 			<button type="button" class="btn btn-sm doneButton" ng-hide="!buttonHider" ng-click="editProgression(chordProgression)">Done</button>
 			<button type="button" class="btn btn-sm" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true">Edit</button>
 			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression(chordProgression.id)">Delete</button>
 		</div>
 	</div>
-
-
 
 </div>
