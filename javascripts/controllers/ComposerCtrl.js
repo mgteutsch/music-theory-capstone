@@ -56,6 +56,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 //AUDIO MANIPULATION
 /**************************************************************************************************/
 	
+	//Play Button (& Pause functionality is within the chord#Player functions)
 	$scope.playProgression = function(userChords){
 		
 		console.log("from playProgression()", userChords);
@@ -66,17 +67,33 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord4 = userChords.chord4;
 
 
+		//Hides Play Button & shows Pause Button:
+		$scope.revealPlayOrPause = true;
+
+
+		//Plays each chord, one after the other (using addEventListener):
 		let chord4Player = function(){
 			if (chord4 == "I" || chord4 == "II" || chord4 == "III" || chord4 == "IV" || chord4 == "V" || chord4 == "VI") {
 				console.log("4th Chord is Major: ", chord4);
 				var audio4Major = new Audio("audio/composerChords/"+chord4+".mp3");
 				audio4Major.play();
 				//audio4Major.addEventListener('ended', chord1Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio4Major.pause();
+				};
+
 			} else {
 				console.log("4th Chord is minor: ", chord4);
 				var audio4Minor = new Audio("audio/composerChords/minor-"+chord4+".mp3");
 				audio4Minor.play();
 				//audio4Minor.addEventListener('ended', chord1Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio4Minor.pause();
+				};
 			}
 		};
 
@@ -87,11 +104,22 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				var audio3Major = new Audio("audio/composerChords/"+chord3+".mp3");
 				audio3Major.play();
 				audio3Major.addEventListener('ended', chord4Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio3Major.pause();
+				};
+
 			} else {
 				console.log("3rd Chord is minor: ", chord3);
 				var audio3Minor = new Audio("audio/composerChords/minor-"+chord3+".mp3");
 				audio3Minor.play();
 				audio3Minor.addEventListener('ended', chord4Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio3Minor.pause();
+				};
 			}
 		};
 
@@ -102,11 +130,22 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				var audio2Major = new Audio("audio/composerChords/"+chord2+".mp3");
 				audio2Major.play();
 				audio2Major.addEventListener('ended', chord3Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio2Major.pause();
+				};
+
 			} else {
 				console.log("2nd Chord is minor: ", chord2);
 				var audio2Minor = new Audio("audio/composerChords/minor-"+chord2+".mp3");
 				audio2Minor.play();
 				audio2Minor.addEventListener('ended', chord3Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio2Minor.pause();
+				};
 			}
 		};
 
@@ -115,33 +154,32 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 			if (chord1 == "I" || chord1 == "II" || chord1 == "III" || chord1 == "IV" || chord1 == "V" || chord1 == "VI") {
 				console.log("1st Chord is Major: ", chord1);
 				var audio1Major = new Audio("audio/composerChords/"+chord1+".mp3");
+				console.log("audio1Major: ", audio1Major);
+				console.log(audio1Major.play());
 				audio1Major.play();
 				audio1Major.addEventListener('ended', chord2Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio1Major.pause();
+				};
+
 				
 			} else {
 				console.log("1st Chord is minor: ", chord1);
 				var audio1Minor = new Audio("audio/composerChords/minor-"+chord1+".mp3");
 				audio1Minor.play();
 				audio1Minor.addEventListener('ended', chord2Player);
+
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio1Minor.pause();
+				};
 			}
 		};
 		chord1Player();
 
 	};
-
-
-
-	$scope.pauseProgression = function(){
-		
-		//switch back to Play button:
-		$scope.revealPlayOrPause = false;
-
-
-
-	};	
-
-
- 
 
 });
 
