@@ -4,10 +4,15 @@ app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, 
 	$scope.loginContainer = true; //in /auth, automatically defaults to Login window
 	$scope.registerContainer = false;
 
-	
+	$scope.login = {
+		email: "a@a.com",
+		password: "123456"
+	};
+
+
+
 	let logMeIn = function(loginStuff){
 			AuthFactory.authenticate(loginStuff).then(function(didLogin){
-			console.log("didLogin: ", didLogin);
 			return UserFactory.getUser(didLogin.uid);
 		}).then(function(userCreds){
 			$rootScope.user = userCreds;
@@ -36,7 +41,6 @@ app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, 
 	$scope.registerUser = function(registerNewUser){
 		AuthFactory.registerWithEmail(registerNewUser).then(function(didRegister){
 			registerNewUser.uid = didRegister.uid; //this is not the best way to do it, because it's also grabbing the password. Adjust as needed.
-			console.log("didRegister: ", didRegister);
 			return UserFactory.addUser(registerNewUser);
 		}).then(function(registerComplete){
 			logMeIn(registerNewUser); 

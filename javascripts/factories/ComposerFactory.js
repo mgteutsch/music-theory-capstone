@@ -6,21 +6,19 @@ app.factory("ComposerFactory", function($q, $http, FIREBASE_CONFIG){
 		return $q((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/chordProgressions.json?orderBy="uid"&equalTo="${userId}"`)
 			.success(function(response){
-				console.log("ComposerFactory response: ", response);
 				let savedProgressions = [];
 				Object.keys(response).forEach(function(key){
-					console.log("ComposerFactory key: ", key);
 					response[key].id = key;
 					savedProgressions.push(response[key]);
 				});
 				resolve(savedProgressions);
-				console.log("ComposerFactory savedProgressions: ", savedProgressions);
 			})
 			.error(function(errorResponse){
 				reject(errorResponse);
 			});
 		});
 	};
+
 
 	var postNewProgression = function(newProgression){
 		return $q((resolve, reject) => {
@@ -42,6 +40,7 @@ app.factory("ComposerFactory", function($q, $http, FIREBASE_CONFIG){
 		});
 	};
 
+
 	var deleteSavedProgression = function(targetProgressionId){
 		return $q((resolve, reject) => {
 			$http.delete(`${FIREBASE_CONFIG.databaseURL}/chordProgressions/${targetProgressionId}.json`)
@@ -53,6 +52,7 @@ app.factory("ComposerFactory", function($q, $http, FIREBASE_CONFIG){
 			});
 		});
 	};
+
 
 	var editSavedProgression = function(editProgression){
 		console.log("from Factory: ", editProgression);
