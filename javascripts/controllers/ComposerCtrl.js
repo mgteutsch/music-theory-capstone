@@ -77,7 +77,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				console.log("4th Chord is Major: ", chord4);
 				var audio4Major = new Audio("audio/composerChords/"+chord4+".mp3");
 				audio4Major.play();
-				//audio4Major.addEventListener('ended', chord1Player);
+				audio4Major.addEventListener('ended', chord1Player);
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
@@ -88,7 +88,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				console.log("4th Chord is minor: ", chord4);
 				var audio4Minor = new Audio("audio/composerChords/minor-"+chord4+".mp3");
 				audio4Minor.play();
-				//audio4Minor.addEventListener('ended', chord1Player);
+				audio4Minor.addEventListener('ended', chord1Player);
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
@@ -128,6 +128,8 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 			if (chord2 == "I" || chord2 == "II" || chord2 == "III" || chord2 == "IV" || chord2 == "V" || chord2 == "VI") {
 				console.log("2nd Chord is Major: ", chord2);
 				var audio2Major = new Audio("audio/composerChords/"+chord2+".mp3");
+				console.log("audio2Major: ", audio2Major);
+				console.log(audio2Major.play());
 				audio2Major.play();
 				audio2Major.addEventListener('ended', chord3Player);
 
@@ -153,7 +155,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord1Player = function(){
 			if (chord1 == "I" || chord1 == "II" || chord1 == "III" || chord1 == "IV" || chord1 == "V" || chord1 == "VI") {
 				console.log("1st Chord is Major: ", chord1);
-				var audio1Major = new Audio("audio/composerChords/"+chord1+".mp3");
+				var audio1Major = new Audio('audio/composerChords/'+chord1+'.mp3');
 				console.log("audio1Major: ", audio1Major);
 				console.log(audio1Major.play());
 				audio1Major.play();
@@ -167,7 +169,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				
 			} else {
 				console.log("1st Chord is minor: ", chord1);
-				var audio1Minor = new Audio("audio/composerChords/minor-"+chord1+".mp3");
+				var audio1Minor = new Audio('audio/composerChords/minor-'+chord1+'.mp3');
 				audio1Minor.play();
 				audio1Minor.addEventListener('ended', chord2Player);
 
