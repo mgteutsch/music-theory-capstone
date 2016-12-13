@@ -4,6 +4,7 @@ app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, 
 	$scope.loginContainer = true; //in /auth, automatically defaults to Login window
 	$scope.registerContainer = false;
 
+
 	$scope.login = {
 		email: "a@a.com",
 		password: "123456"
