@@ -3,18 +3,18 @@
 	<h1>Chord Composer Page</h1>
 
 	<h3>Chord Progression:</h3>
-	<img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF">
+	<!-- <img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF"> -->
 	<div>
-		<input type="text" placeholder="1" ng-model="newProgression.chord1" required>
-		<input type="text" placeholder="2" ng-model="newProgression.chord2" required>
-		<input type="text" placeholder="3" ng-model="newProgression.chord3" required>
-		<input type="text" placeholder="4" ng-model="newProgression.chord4" required>
+		<input type="text" placeholder="1" class="newChordInput1" ng-model="newProgression.chord1" required>
+		<input type="text" placeholder="2" class="newChordInput2" ng-model="newProgression.chord2" required>
+		<input type="text" placeholder="3" class="newChordInput3" ng-model="newProgression.chord3" required>
+		<input type="text" placeholder="4" class="newChordInput4" ng-model="newProgression.chord4" required>
 		
-		<button type="button" class="btn btn-success btn-sm" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression)">Play</button>
+		<button type="button" class="btn btn-success btn-sm" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes()">Play</button>
 		
-		<button type="button" class="btn btn-sm" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression)">Pause</button>
+		<button type="button" class="btn btn-sm" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd()">Pause</button>
 		
-		<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression)">Save Chord Progression</button>
+		<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression); glowBoxes()">Save Chord Progression</button>
 	</div>
 
 
