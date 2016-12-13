@@ -9,3 +9,20 @@ h1 {
 	box-shadow: 5px 5px 5px lightgrey; 
 
 }
+
+
+
+/**************************************************************/
+/*Glowing Boxes around Users New Chords */
+/**************************************************************/
+
+.newChordInput1, .newChordInput2, .newChordInput3, .newChordInput4 {
+	box-shadow: none;
+	background-color: none;
+}
+
+.glowBox {
+	box-shadow: 0 0 20px yellow;
+	background-color: lightyellow;
+}
+
