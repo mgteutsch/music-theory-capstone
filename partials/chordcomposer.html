@@ -10,11 +10,13 @@
 		<input type="text" placeholder="3" class="newChordInput3" ng-model="newProgression.chord3">
 		<input type="text" placeholder="4" class="newChordInput4" ng-model="newProgression.chord4">
 		
-		<button type="button" class="btn btn-success btn-sm" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes()">Play</button>
+		<button type="button" class="btn btn-success btn-sm" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true">Play</button>
 		
-		<button type="button" class="btn btn-sm" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd()">Pause</button>
+		<button type="button" class="btn btn-sm" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false">Pause</button>
 		
-		<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression); glowBoxes()">Save Chord Progression</button>
+		<button type="button" class="btn btn-primary btn-sm" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()">Save Chord Progression</button>
+
+		<button type="button" class="btn btn-sm btn-danger" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear Chord Progression</button>
 	</div>
 
 	<div ng-hide="errorMessage" ng-init="errorMessage=true">
@@ -32,7 +34,7 @@
 			<input type="text" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
 			<input type="text" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
 			
-			<button type="button" class="btn btn-sm btn-primary" ng-click="loadToPlayer(chordProgression)">Load to Player</button>
+			<button type="button" class="btn btn-sm btn-primary" ng-disabled="playDisabler" ng-click="loadToPlayer(chordProgression)">Load to Player</button>
 
 			<button type="button" class="btn btn-sm doneButton" ng-hide="!buttonHider" ng-click="editProgression(chordProgression)">Done</button>
 			

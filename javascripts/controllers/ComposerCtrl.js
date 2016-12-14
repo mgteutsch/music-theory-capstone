@@ -56,6 +56,12 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 //Audio Manipulation, Glowing Boxes Animations, & Loading Saved Chords
 /**************************************************************************************************/
 
+	//Clears the player's chord progression:
+	$scope.clearProgression = function(){
+		$scope.newProgression = {};
+	};
+		
+
 	//Loads Saved Chords so they can be played:
 	$scope.loadToPlayer = function(savedChords){
 		$scope.newProgression = savedChords;
@@ -65,8 +71,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 
 	//Play Button (& Pause functionality is within the chord#Player functions)
 	$scope.playProgression = function(userChords){
-		console.log(userChords);
-
+		
 		let chord1 = userChords.chord1;
 		let chord2 = userChords.chord2;
 		let chord3 = userChords.chord3;
