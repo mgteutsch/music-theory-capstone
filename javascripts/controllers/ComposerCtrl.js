@@ -72,111 +72,159 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 
 
 		/*The following chord#Player functions:
-			(1) Play each chord one after the other (using addEventListener):
+			(1) Determine which chords to play,
 			(2) Add/Remove glowBox classes as each chord plays
 		*/
 		let chord4Player = function(){
+			var nextChord;
+				let playNextChord = function(){
+					nextChord = setTimeout(function(){chord1Player();},1970);
+				};
+				let stopNextChord = function(){
+					clearTimeout(nextChord);
+				};
+			playNextChord();			
+
+
 			if (chord4 == "I" || chord4 == "II" || chord4 == "III" || chord4 == "IV" || chord4 == "V" || chord4 == "VI") {
 				console.log("4th Chord is Major: ", chord4);
 				var audio4Major = new Audio("audio/composerChords/"+chord4+".mp3");
 				audio4Major.play();
+				
 				angular.element(document.querySelector('.newChordInput3')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput4')).addClass("glowBox");
-				audio4Major.addEventListener('ended', chord1Player);
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio4Major.pause();
+					stopNextChord();
 				};
 
 			} else {
 				console.log("4th Chord is minor: ", chord4);
 				var audio4Minor = new Audio("audio/composerChords/minor-"+chord4+".mp3");
 				audio4Minor.play();
+				
 				angular.element(document.querySelector('.newChordInput3')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput4')).addClass("glowBox");
-				audio4Minor.addEventListener('ended', chord1Player);
-
+				
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio4Minor.pause();
+					stopNextChord();
 				};
 			}
 		};
 
 
 		let chord3Player = function(){
+			var nextChord;
+				let playNextChord = function(){
+					nextChord = setTimeout(function(){chord4Player();},1970);
+				};
+				let stopNextChord = function(){
+					clearTimeout(nextChord);
+				};
+			playNextChord();			
+
+
 			if (chord3 == "I" || chord3 == "II" || chord3 == "III" || chord3 == "IV" || chord3 == "V" || chord3 == "VI") {
 				console.log("3rd Chord is Major: ", chord3);
 				var audio3Major = new Audio("audio/composerChords/"+chord3+".mp3");
 				audio3Major.play();
+				
 				angular.element(document.querySelector('.newChordInput2')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput3')).addClass("glowBox");
-				audio3Major.addEventListener('ended', chord4Player);
+				
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio3Major.pause();
+					stopNextChord();
 				};
 
 			} else {
 				console.log("3rd Chord is minor: ", chord3);
 				var audio3Minor = new Audio("audio/composerChords/minor-"+chord3+".mp3");
 				audio3Minor.play();
+				
 				angular.element(document.querySelector('.newChordInput2')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput3')).addClass("glowBox");
-				audio3Minor.addEventListener('ended', chord4Player);
+				
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio3Minor.pause();
+					stopNextChord();
 				};
 			}
 		};
 
 
 		let chord2Player = function(){
+			var nextChord;
+				let playNextChord = function(){
+					nextChord = setTimeout(function(){chord3Player();},1970);
+				};
+				let stopNextChord = function(){
+					clearTimeout(nextChord);
+				};
+			playNextChord();
+
+
 			if (chord2 == "I" || chord2 == "II" || chord2 == "III" || chord2 == "IV" || chord2 == "V" || chord2 == "VI") {
 				console.log("2nd Chord is Major: ", chord2);
 				var audio2Major = new Audio("audio/composerChords/"+chord2+".mp3");
 				audio2Major.play();
+				
 				angular.element(document.querySelector('.newChordInput1')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput2')).addClass("glowBox");
-				audio2Major.addEventListener('ended', chord3Player);
-
+				
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio2Major.pause();
+					stopNextChord();
 				};
 
 			} else {
 				console.log("2nd Chord is minor: ", chord2);
 				var audio2Minor = new Audio("audio/composerChords/minor-"+chord2+".mp3");
 				audio2Minor.play();
+				
 				angular.element(document.querySelector('.newChordInput1')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput2')).addClass("glowBox");
-				audio2Minor.addEventListener('ended', chord3Player);
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio2Minor.pause();
+					stopNextChord();
 				};
 			}
 		};
 
 
 		let chord1Player = function(){
+			var nextChord;
+				let playNextChord = function(){
+					nextChord = setTimeout(function(){chord2Player();},1970);
+				};
+				let stopNextChord = function(){
+					clearTimeout(nextChord);
+				};
+			playNextChord();			
+
 			if (chord1 == "I" || chord1 == "II" || chord1 == "III" || chord1 == "IV" || chord1 == "V" || chord1 == "VI") {
 				console.log("1st Chord is Major: ", chord1);
 				var audio1Major = new Audio('audio/composerChords/'+chord1+'.mp3');
 				audio1Major.play();
+				
 				angular.element(document.querySelector('.newChordInput4')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput1')).addClass("glowBox");
-				audio1Major.addEventListener('ended', chord2Player);
 
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio1Major.pause();
+					stopNextChord();
 				};
 
 				
@@ -184,17 +232,19 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				console.log("1st Chord is minor: ", chord1);
 				var audio1Minor = new Audio('audio/composerChords/minor-'+chord1+'.mp3');
 				audio1Minor.play();
+				
 				angular.element(document.querySelector('.newChordInput4')).removeClass("glowBox");
 				angular.element(document.querySelector('.newChordInput1')).addClass("glowBox");
-				audio1Minor.addEventListener('ended', chord2Player);
-
+				
 				$scope.pauseProgression = function(){		
 					$scope.revealPlayOrPause = false;
 					audio1Minor.pause();
+					stopNextChord();
 				};
-			}
+			}	
 		};
 		chord1Player();
+
 
 
 
