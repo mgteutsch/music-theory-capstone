@@ -17,8 +17,7 @@
 		<button type="button" class="btn btn-primary btn-sm" ng-click="addNewProgression(newProgression); glowBoxes()">Save Chord Progression</button>
 	</div>
 
-
-
+	
 	<hr/>
 	<h3>Saved Chord Progressions</h3>
 	<hr/>
@@ -35,6 +34,26 @@
 			
 			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression(chordProgression.id)">Delete</button>
 		</div>
+	</div>
+
+	<!--Audio Files preloaded so there is no delay in the timing of playProgression()-->
+	<div ng-hide="true">
+		<audio preload="auto">
+			<source src="audio/composerChords/I.mp3">
+			<source src="audio/composerChords/II.mp3">
+			<source src="audio/composerChords/III.mp3">
+			<source src="audio/composerChords/IV.mp3">
+			<source src="audio/composerChords/V.mp3">
+			<source src="audio/composerChords/VI.mp3">
+
+			<source src="audio/composerChords/minor-i.mp3">
+			<source src="audio/composerChords/minor-ii.mp3">
+			<source src="audio/composerChords/minor-iii.mp3">
+			<source src="audio/composerChords/minor-iv.mp3">
+			<source src="audio/composerChords/minor-v.mp3">
+			<source src="audio/composerChords/minor-vi.mp3">
+			<source src="audio/composerChords/minor-vii.mp3">
+		</audio>
 	</div>
 
 </div>
