@@ -53,13 +53,19 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 
 
 /**************************************************************************************************/
-//AUDIO MANIPULATION & GLOWING BOXES ANIMATION
+//Audio Manipulation, Glowing Boxes Animations, & Loading Saved Chords
 /**************************************************************************************************/
-	
+
+	//Loads Saved Chords so they can be played:
+	$scope.loadToPlayer = function(savedChords){
+		$scope.newProgression = savedChords;
+	};
+ 
+
+
 	//Play Button (& Pause functionality is within the chord#Player functions)
 	$scope.playProgression = function(userChords){
-		
-		console.log("from playProgression()", userChords);
+		console.log(userChords);
 
 		let chord1 = userChords.chord1;
 		let chord2 = userChords.chord2;
@@ -243,9 +249,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				};
 			}	
 		};
-		chord1Player();
-
-
+		chord1Player(); /* Executes the loop of chord#Player() functions */
 
 
 		//Pause Button ends the glowing:
@@ -255,9 +259,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 			angular.element(document.querySelector('.newChordInput3')).removeClass("glowBox");
 			angular.element(document.querySelector('.newChordInput4')).removeClass("glowBox");
 		};
-
-
-		
 	};
+
 });
 
