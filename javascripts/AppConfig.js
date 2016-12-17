@@ -41,6 +41,11 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/chordcomposer.html',
 			controller: 'ComposerCtrl',
 			resolve: {isAuth} 
+		})
+		.when('/improviser', {
+			templateUrl: 'partials/improviser.html',
+			controller: 'ImproviserCtrl',
+			resolve: {isAuth}
 		}) 
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',

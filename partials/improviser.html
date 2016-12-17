@@ -1,3 +1,59 @@
+<div id="myDiv">
+
+	<h1>Improviser</h1>
+
+	<div class="centerButtons">
+		<button ng-click="playI()" ng-keydown="$event.keyCode == 49 && playI()">I</button>
+		<button ng-click="playii()" ng-keydown="$event.keyCode == 50 && playii()">ii</button>
+		<button ng-click="playiii()" ng-keydown="$event.keyCode == 51 && playiii()">iii</button>
+		<button ng-click="playIV()" ng-keydown="$event.keyCode == 52 && playIV()">IV</button>
+		<button ng-click="playV()" ng-keydown="$event.keyCode == 53 && playV()">V</button>
+		<button ng-click="playvi()" ng-keydown="$event.keyCode == 54 && playvi()">vi</button>
+		<button ng-click="playvii()" ng-keydown="$event.keyCode == 55 && playvii()">vii</button>
+	</div>
+	
+	<hr/>
+	
+	<div class="centerButtons">
+		<button ng-click="playi()" ng-keydown="$event.keyCode == 81 && playi()">i</button>
+		<button ng-click="playII()" ng-keydown="$event.keyCode == 87 && playII()">II</button>
+		<button ng-click="playIII()" ng-keydown="$event.keyCode == 69 && playIII()">III</button>
+		<button ng-click="playiv()" ng-keydown="$event.keyCode == 82 && playiv()">iv</button>
+		<button ng-click="playv()" ng-keydown="$event.keyCode == 84 && playv()">v</button>
+		<button ng-click="playVI()" ng-keydown="$event.keyCode == 89 && playVI()">VI</button>
+	</div>
+	
+	<hr/>
+	
+	<div class="centerButtons">
+		<button type="button" class="btn btn-md btn-danger" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Test ng-keydown Focus</button>
+	</div>
+
+
+	<!--Audio Files preloaded to avoid delays-->
+	<div ng-hide="true">
+		<audio preload="auto">
+			<source src="audio/composerChords/I.mp3">
+			<source src="audio/composerChords/II.mp3">
+			<source src="audio/composerChords/III.mp3">
+			<source src="audio/composerChords/IV.mp3">
+			<source src="audio/composerChords/V.mp3">
+			<source src="audio/composerChords/VI.mp3">
+
+			<source src="audio/composerChords/minor-i.mp3">
+			<source src="audio/composerChords/minor-ii.mp3">
+			<source src="audio/composerChords/minor-iii.mp3">
+			<source src="audio/composerChords/minor-iv.mp3">
+			<source src="audio/composerChords/minor-v.mp3">
+			<source src="audio/composerChords/minor-vi.mp3">
+			<source src="audio/composerChords/minor-vii.mp3">
+		</audio>
+	</div>
+
+</div>
+
+
+
 <!--Placeholder for stretch goals -->
 	<!--
 	<audio autobuffer autoloop loop controls>

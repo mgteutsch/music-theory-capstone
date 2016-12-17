@@ -7,6 +7,9 @@ h1 {
   border: 2px solid grey;
   box-shadow: 5px 5px 5px lightgrey; }
 
+.centerButtons {
+  text-align: center; }
+
 /**************************************************************/
 /*Glowing Boxes around Users New Chords */
 /**************************************************************/
