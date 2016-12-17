@@ -2,6 +2,14 @@
 
 	<h1>Improviser</h1>
 
+	<form>
+		<h3>Select Sound Library</h3>
+		<input type="radio" name="soundChoice" value="Basic Piano"> Basic Piano <br/>
+		<input type="radio" name="soundChoice" value="Brooding Symphony"> Brooding Symphony <br/>
+		<input type="radio" name="soundChoice" value="80s Pleather Anthem"> 80s Pleather Anthem <br/>
+		<input type="radio"  name="soundChoice" value="Prohibition Jazz Club"> Prohibition Strip Club -- JAZZ club. I mean jazz club. <br/>
+	</form>
+
 	<div class="centerButtons">
 		<button ng-click="playI()" ng-keydown="$event.keyCode == 49 && playI()">I</button>
 		<button ng-click="playii()" ng-keydown="$event.keyCode == 50 && playii()">ii</button>
