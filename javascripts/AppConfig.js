@@ -37,6 +37,11 @@ app.config(function($routeProvider){
 			templateUrl: 'partials/auth.html',
 			controller: 'AuthCtrl'
 		})
+		.when('/lessons', {
+			templateUrl: 'partials/lessons.html',
+			controller: 'LessonsCtrl',
+			resolve: {isAuth}
+		})
 		.when('/chordcomposer', {	
 			templateUrl: 'partials/chordcomposer.html',
 			controller: 'ComposerCtrl',
