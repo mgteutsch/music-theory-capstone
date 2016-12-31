@@ -1,40 +1,55 @@
-<div id="myDiv">
+<div class="container">
 
 	<h1>Improviser</h1>
 
 	<form>
 		<h3>Select Sound Library</h3>
-		<input type="radio" name="soundChoice" value="Basic Piano"> Basic Piano <br/>
-		<input type="radio" name="soundChoice" value="Brooding Symphony"> Brooding Symphony <br/>
-		<input type="radio" name="soundChoice" value="80s Pleather Anthem"> 80s Pleather Anthem <br/>
-		<input type="radio"  name="soundChoice" value="Prohibition Jazz Club"> Prohibition Strip Club -- JAZZ club. I mean jazz club. <br/>
+		<p>
+    		<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic Piano">
+      		<label for="choice1">Basic Piano</label>
+    	</p>
+    	<p>
+    		<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Basic Piano">
+      		<label for="choice2">Brooding Symphony</label>
+    	</p>
+    	<p>
+    		<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="Basic Piano">
+      		<label for="choice3">80s Pleather Anthem</label>
+    	</p>
+    	<p>
+    		<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="Basic Piano">
+      		<label for="choice4">The Lounge</label>
+    	</p>
 	</form>
 
-	<div class="centerButtons">
-		<button ng-click="playI()" ng-keydown="$event.keyCode == 49 && playI()">I</button>
-		<button ng-click="playii()" ng-keydown="$event.keyCode == 50 && playii()">ii</button>
-		<button ng-click="playiii()" ng-keydown="$event.keyCode == 51 && playiii()">iii</button>
-		<button ng-click="playIV()" ng-keydown="$event.keyCode == 52 && playIV()">IV</button>
-		<button ng-click="playV()" ng-keydown="$event.keyCode == 53 && playV()">V</button>
-		<button ng-click="playvi()" ng-keydown="$event.keyCode == 54 && playvi()">vi</button>
-		<button ng-click="playvii()" ng-keydown="$event.keyCode == 55 && playvii()">vii</button>
+	<br/>
+	<hr/>
+
+	<div class="center">
+		<a class="col s1 btn red accent-2" ng-click="playI()" ng-keydown="$event.keyCode == 49 && playI()">I</a>
+		<a class="col s1 btn orange accent-2" ng-click="playii()" ng-keydown="$event.keyCode == 50 && playii()">ii</a>
+		<a class="col s1 btn yellow accent-2" ng-click="playiii()" ng-keydown="$event.keyCode == 51 && playiii()">iii</a>
+		<a class="col s1 btn green accent-2" ng-click="playIV()" ng-keydown="$event.keyCode == 52 && playIV()">IV</a>
+		<a class="col s1 btn blue accent-2" ng-click="playV()" ng-keydown="$event.keyCode == 53 && playV()">V</a>
+		<a class="col s1 btn indigo accent-2" ng-click="playvi()" ng-keydown="$event.keyCode == 54 && playvi()">vi</a>
+		<a class="col s1 btn deep-purple accent-2" ng-click="playvii()" ng-keydown="$event.keyCode == 55 && playvii()">vii</a>
 	</div>
 	
 	<hr/>
 	
-	<div class="centerButtons">
-		<button ng-click="playi()" ng-keydown="$event.keyCode == 81 && playi()">i</button>
-		<button ng-click="playII()" ng-keydown="$event.keyCode == 87 && playII()">II</button>
-		<button ng-click="playIII()" ng-keydown="$event.keyCode == 69 && playIII()">III</button>
-		<button ng-click="playiv()" ng-keydown="$event.keyCode == 82 && playiv()">iv</button>
-		<button ng-click="playv()" ng-keydown="$event.keyCode == 84 && playv()">v</button>
-		<button ng-click="playVI()" ng-keydown="$event.keyCode == 89 && playVI()">VI</button>
+	<div class="center">
+		<a class="col s1 btn" ng-click="playi()" ng-keydown="$event.keyCode == 81 && playi()">i</a>
+		<a class="col s1 btn" ng-click="playII()" ng-keydown="$event.keyCode == 87 && playII()">II</a>
+		<a class="col s1 btn" ng-click="playIII()" ng-keydown="$event.keyCode == 69 && playIII()">III</a>
+		<a class="col s1 btn" ng-click="playiv()" ng-keydown="$event.keyCode == 82 && playiv()">iv</a>
+		<a class="col s1 btn" ng-click="playv()" ng-keydown="$event.keyCode == 84 && playv()">v</a>
+		<a class="col s1 btn" ng-click="playVI()" ng-keydown="$event.keyCode == 89 && playVI()">VI</a>
 	</div>
 	
 	<hr/>
 	
-	<div class="centerButtons">
-		<button type="button" class="btn btn-md btn-danger" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Test ng-keydown Focus</button>
+	<div class="center">
+		<button type="button" class="btn" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
 	</div>
 
 

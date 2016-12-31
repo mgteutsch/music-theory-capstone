@@ -1,15 +1,14 @@
 <!-- All navbar <li> links come from the routes established in AppConfig.js -->
 
-<nav class="navbar navbar-default" ng-show="user">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/lessons">Lessons</a></li>
-        <li><a>Ear Training</a></li>
-        <li><a href="#/chordcomposer">Chord Composer</a></li> 
-        <li><a href="#/improviser">Improviser</a></li>
-        <li><a href="#/logout">Logout</a></li> 
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+<nav ng-show="user">
+  <div class="nav-wrapper">
+    <a class="brand-logo">//LOGO//</a>
+    <ul class="right">
+      <li><a href="#/lessons">Lessons</a></li>
+      <li><a>Ear Training</a></li>
+      <li><a href="#/chordcomposer">Chord Composer</a></li> 
+      <li><a href="#/improviser">Improviser</a></li>
+      <li><a href="#/logout">Logout</a></li> 
+    </ul>
+  </div>
 </nav>

@@ -1,50 +1,64 @@
-<div>
-
+<div class="container">
+	
 	<h1>Chord Composer</h1>
 
-	<h3>Chord Progression:</h3>
-	<!-- <img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF"> -->
-	<div>
-		<input type="text" placeholder="1" class="newChordInput1" ng-model="newProgression.chord1">
-		<input type="text" placeholder="2" class="newChordInput2" ng-model="newProgression.chord2">
-		<input type="text" placeholder="3" class="newChordInput3" ng-model="newProgression.chord3">
-		<input type="text" placeholder="4" class="newChordInput4" ng-model="newProgression.chord4">
-		
-		<button type="button" class="btn btn-success btn-sm" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true">Play</button>
-		
-		<button type="button" class="btn btn-sm" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false">Pause</button>
-		
-		<button type="button" class="btn btn-primary btn-sm" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()">Save Chord Progression</button>
+	<div class="playerBorder">
+		<h3>Chord Progression:</h3>
+		<!-- <img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF"> -->
+		<div class="row input-field">
+			<a class="col s1"></a>
+			<input type="text" placeholder="1" class="newChordInput1 col s1" ng-model="newProgression.chord1">
+			<a class="col s2"></a>
+			<input type="text" placeholder="2" class="newChordInput2 col s1" ng-model="newProgression.chord2">
+			<a class="col s2"></a>
+			<input type="text" placeholder="3" class="newChordInput3 col s1" ng-model="newProgression.chord3">
+			<a class="col s2"></a>
+			<input type="text" placeholder="4" class="newChordInput4 col s1" ng-model="newProgression.chord4">
+		</div>
+		<div class="row center">	
+			<a class="waves-effect waves-light btn" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true"><i class="material-icons left">play_arrow</i>Play</a>
+			
+			<a class="waves-effect waves-light btn" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false"><i class="material-icons left">pause</i>Pause</a>
+			
+			<a class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()"><i class="material-icons left">playlist_add</i>Save</a>
 
-		<button type="button" class="btn btn-sm btn-danger" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear Chord Progression</button>
-	</div>
+			<a class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear</a>
+		</div>
+	</div>	
 
 	<div ng-hide="errorMessage" ng-init="errorMessage=true">
 			<p>Please enter valid chords in all 4 boxes.</p>
 			<button type="button" class="btn btn-sm btn-warning" ng-click="errorMessage=true">OK</button>
 	</div>
 	
+	<br/>
+
 	<hr/>
 	<h3>Saved Chord Progressions</h3>
 	<hr/>
-	<div ng-repeat="chordProgression in chordProgressions">
-		<div class="singleProgressionContainer" id="{{chordProgression.id}}">
-			<input type="text" ng-model="chordProgression.chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
-			<input type="text" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
-			<input type="text" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
-			<input type="text" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
+	<div class="row" ng-repeat="chordProgression in chordProgressions">
+		<div class="singleProgressionContainer input-field" id="{{chordProgression.id}}">
+			<div class="col s1"></div>
+			<input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord1" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord2" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord3" ng-disabled="editDisabler" ng-init="editDisabler=true">
+			<input type="text" class="col s1 savedProgressions" ng-model="chordProgression.chord4" ng-disabled="editDisabler" ng-init="editDisabler=true">
 			
-			<button type="button" class="btn btn-sm btn-primary" ng-disabled="playDisabler" ng-click="loadToPlayer(chordProgression)">Load to Player</button>
+			<div class="savedProgressionBtns">
+				<a class="waves-effect waves-red btn-flat right" ng-disabled="playDisabler" ng-click="deleteProgression(chordProgression.id)"><i class="material-icons">delete</i></a>
 
-			<button type="button" class="btn btn-sm doneButton" ng-hide="!buttonHider" ng-click="editProgression(chordProgression)">Done</button>
-			
-			<button type="button" class="btn btn-sm" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true">Edit</button>
-			
-			<button type="button" class="btn btn-danger btn-sm" ng-click="deleteProgression(chordProgression.id)">Delete</button>
+				<a class="waves-effect waves-light btn-flat right" ng-disabled="playDisabler" ng-hide="buttonHider" ng-click="editDisabler=false; buttonHider=true"><i class="material-icons right">mode_edit</i>Edit</a>
+
+				<a class="waves-effect waves-light btn-flat right" ng-disabled="playDisabler" ng-hide="!buttonHider" ng-click="editProgression(chordProgression)"><i class="material-icons right">done</i>Done</a>
+
+				<a class="waves-effect waves-yellow btn-flat right" ng-disabled="playDisabler" ng-click="loadToPlayer(chordProgression)"><i class="material-icons left">airplay</i>Load to Player</a>
+			</div>
 		</div>
 	</div>
 
-	<!--Audio Files preloaded so there is no delay in the timing of playProgression()-->
+
+	<!-- Hidden - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+	<!--Audio Files preloaded to help prevent delay in the timing of playProgression()-->
 	<div ng-hide="true">
 		<audio preload="auto">
 			<source src="audio/composerChords/I.mp3">

@@ -2,18 +2,11 @@
 
 app.controller("ImproviserCtrl", function($q, $scope, $rootScope, $location){
 
-	$scope.playI = function(e){
+	$scope.playI = function(){
 		var audioI = new Audio("audio/composerChords/I.mp3");
 		audioI.play();
-		console.log("e: ", e);
-		if (e.key===49) {
-			audioI.play();
-		}
 	};
 
-	$('#myDiv').keydown(function(){
-		console.log("key press");
-	});
 
 	$scope.playii = function(){
 		var audioii = new Audio("audio/composerChords/minor-ii.mp3");
