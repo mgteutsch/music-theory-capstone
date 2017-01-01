@@ -220,7 +220,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord1Player = function(){
 			var nextChord;
 				let playNextChord = function(){
-					nextChord = setTimeout(function(){chord2Player();},1980);
+					nextChord = setTimeout(function(){chord2Player();},1990);
 				};
 				let stopNextChord = function(){
 					clearTimeout(nextChord);
