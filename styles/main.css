@@ -7,16 +7,33 @@ h1 {
   border: 2px solid grey;
   box-shadow: 5px 5px 5px lightgrey; }
 
-.centerButtons {
+/**************************************************************/
+/* Chord Composer Styling */
+/**************************************************************/
+.playerBorder {
+  border: 2px solid darkgrey;
+  border-radius: 5px; }
+
+/* Glowing Boxes around Users New Chords */
+/*-----------------------------------------------------------*/
+.input-field .newChordInput1, .input-field .newChordInput2, .input-field .newChordInput3, .input-field .newChordInput4 {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: none;
   text-align: center; }
 
-/**************************************************************/
-/*Glowing Boxes around Users New Chords */
-/**************************************************************/
-.newChordInput1, .newChordInput2, .newChordInput3, .newChordInput4 {
-  box-shadow: none;
-  background-color: none; }
-
-.glowBox {
+.input-field .glowBox {
+  border: 2px solid yellow;
   box-shadow: 0 0 20px yellow;
   background-color: lightyellow; }
+
+/* Saved Progressions */
+/*-----------------------------------------------------------*/
+.input-field .savedProgressions {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  text-align: center; }
+
+.savedProgressionBtns {
+  padding-top: 4px; }

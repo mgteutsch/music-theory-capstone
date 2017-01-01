@@ -82,14 +82,17 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		$scope.revealPlayOrPause = true;
 
 
-		/*The following chord#Player functions:
-			(1) Determine which chords to play,
-			(2) Add/Remove glowBox classes as each chord plays
+		// ---------------------------------------------------------------------------------------
+		// CHORD PROGRESSION PLAYER --------------------------------------------------------------
+		// ---------------------------------------------------------------------------------------
+		/*  The following chord#Player functions:
+				(1) Determine which chords to play,
+				(2) Add/Remove glowBox classes as each chord plays
 		*/
 		let chord4Player = function(){
 			var nextChord;
 				let playNextChord = function(){
-					nextChord = setTimeout(function(){chord1Player();},1970);
+					nextChord = setTimeout(function(){chord1Player();},1980);
 				};
 				let stopNextChord = function(){
 					clearTimeout(nextChord);
@@ -131,7 +134,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord3Player = function(){
 			var nextChord;
 				let playNextChord = function(){
-					nextChord = setTimeout(function(){chord4Player();},1970);
+					nextChord = setTimeout(function(){chord4Player();},1980);
 				};
 				let stopNextChord = function(){
 					clearTimeout(nextChord);
@@ -175,7 +178,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord2Player = function(){
 			var nextChord;
 				let playNextChord = function(){
-					nextChord = setTimeout(function(){chord3Player();},1970);
+					nextChord = setTimeout(function(){chord3Player();},1980);
 				};
 				let stopNextChord = function(){
 					clearTimeout(nextChord);
@@ -217,7 +220,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 		let chord1Player = function(){
 			var nextChord;
 				let playNextChord = function(){
-					nextChord = setTimeout(function(){chord2Player();},1970);
+					nextChord = setTimeout(function(){chord2Player();},1980);
 				};
 				let stopNextChord = function(){
 					clearTimeout(nextChord);
@@ -237,7 +240,6 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 					audio1Major.pause();
 					stopNextChord();
 				};
-
 				
 			} else {
 				console.log("1st Chord is minor: ", chord1);
@@ -254,7 +256,39 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 				};
 			}	
 		};
-		chord1Player(); /* Executes the loop of chord#Player() functions */
+
+		//chordPlayerStarter() only executes once per Play button press. It is created because:
+			//There is a slight delay before the chord1 plays so that chord2 plays in time.
+			//Without this half-second delay (below), chord1 has a slight load delay and as a result chord2 plays slightly ahead of time.
+		//In order to have the Pause function still work during this function, the if/else statement needed to be written.
+		let chordPlayerStarter = function(){
+			var nextChord;
+				let playNextChord = function(){
+					nextChord = setTimeout(function(){chord1Player();},500);
+				};
+				let stopNextChord = function(){
+					clearTimeout(nextChord);
+				};
+			playNextChord();
+
+			if (chord1 == "I" || chord1 == "II" || chord1 == "III" || chord1 == "IV" || chord1 == "V" || chord1 == "VI") {
+				var audio1Major = new Audio('audio/composerChords/'+chord1+'.mp3');
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio1Major.pause();
+					stopNextChord();
+				};
+			
+			} else {
+				var audio1Minor = new Audio('audio/composerChords/minor-'+chord1+'.mp3');
+				$scope.pauseProgression = function(){		
+					$scope.revealPlayOrPause = false;
+					audio1Minor.pause();
+					stopNextChord();
+				};
+			}	
+		};
+		chordPlayerStarter(); /* Executes the loop of chord#Player() functions */
 
 
 		//Pause Button ends the glowing:
