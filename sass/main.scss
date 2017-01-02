@@ -52,4 +52,52 @@
 	padding-top: 4px;
 }
 
+/**************************************************************/
+/* Improviser Styling */
+/**************************************************************/
+
+.improviserKeys {
+	.btn {
+		text-transform: none;
+	}
+}
+
+//------------------------------------------------------------//
+
+.background-I {
+	background-image: url("../images/improviserBackgrounds/greenZigZags.jpg");
+	background-repeat: repeat-xy;
+}
+
+.key-I {
+	background-color: #f50057;
+}
+
+.keyAlt-I {
+	background-color: #c51162;
+}
+
+.textColor-I {
+	color: #f50057;
+}
+
+//------------------------------------------------------------//
+
+.background-ii {
+	background-image: url("../images/improviserBackgrounds/darkSwirls.jpg");
+	background-repeat: repeat-xy;
+}
+
+.key-ii {
+	background-color: #64ffda;
+}
+
+.keyAlt-ii {
+	background-color: #00bfa5;
+}
+
+.textColor-ii {
+	color: #00bfa5;
+}
+
 

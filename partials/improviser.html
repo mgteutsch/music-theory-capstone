@@ -1,77 +1,81 @@
 <div>
-	<h1>Improviser</h1>
 
-	<form>
-		<a class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
-			<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
-				<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
-		  		<label for="choice1">Basic Piano</label>
-			
-			
-				<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Brooding-Symphony" ng-click="hideLibrary=true">
-		  		<label for="choice2">Brooding Symphony</label>
-			
-			 
-				<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="80s-Pleather-Antherm" ng-click="hideLibrary=true">
-		  		<label for="choice3">80s Pleather Anthem</label>
-			
-			
-				<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="The-Lounge" ng-click="hideLibrary=true">
-		  		<label for="choice4">The Lounge</label>	
-		  	</span>
-	</form>
-</div>
+	<div id="improviserTitle">
+		<h1>Improviser</h1>
 
-<div class="container">
-	<br/>
-	<hr/>
-
-	<div class="center">
-		<a class="col s1 btn light-blue darken-3" ng-click="playI()" ng-keydown="$event.keyCode == 49 && playI()">I</a>
-		<a class="col s1 btn light-blue darken-2" ng-click="playii()" ng-keydown="$event.keyCode == 50 && playii()">ii</a>
-		<a class="col s1 btn light-blue darken-1" ng-click="playiii()" ng-keydown="$event.keyCode == 51 && playiii()">iii</a>
-		<a class="col s1 btn light-blue" ng-click="playIV()" ng-keydown="$event.keyCode == 52 && playIV()">IV</a>
-		<a class="col s1 btn light-blue lighten-1" ng-click="playV()" ng-keydown="$event.keyCode == 53 && playV()">V</a>
-		<a class="col s1 btn light-blue lighten-2" ng-click="playvi()" ng-keydown="$event.keyCode == 54 && playvi()">vi</a>
-		<a class="col s1 btn light-blue lighten-3" ng-click="playvii()" ng-keydown="$event.keyCode == 55 && playvii()">vii°</a>
-	</div>
-	
-	<hr/>
-	
-	<div class="center">
-		<a class="col s1 btn indigo darken-3" ng-click="playi()" ng-keydown="$event.keyCode == 81 && playi()">i</a>
-		<a class="col s1 btn indigo darken-2" ng-click="playII()" ng-keydown="$event.keyCode == 87 && playII()">II</a>
-		<a class="col s1 btn indigo darken-1" ng-click="playIII()" ng-keydown="$event.keyCode == 69 && playIII()">III</a>
-		<a class="col s1 btn indigo" ng-click="playiv()" ng-keydown="$event.keyCode == 82 && playiv()">iv</a>
-		<a class="col s1 btn indigo lighten-1" ng-click="playv()" ng-keydown="$event.keyCode == 84 && playv()">v</a>
-		<a class="col s1 btn indigo lighten-2" ng-click="playVI()" ng-keydown="$event.keyCode == 89 && playVI()">VI</a>
-	</div>
-	
-	<hr/>
-	
-	<div class="center">
-		<button type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
+		<form>
+			<a class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
+				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
+			  		<label for="choice1">Basic Piano</label>
+				
+				
+					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Brooding-Symphony" ng-click="hideLibrary=true">
+			  		<label for="choice2">Brooding Symphony</label>
+				
+				 
+					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="80s-Pleather-Antherm" ng-click="hideLibrary=true">
+			  		<label for="choice3">80s Pleather Anthem</label>
+				
+				
+					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="The-Lounge" ng-click="hideLibrary=true">
+			  		<label for="choice4">The Lounge</label>	
+			  	</span>
+		</form>
 	</div>
 
+	<div class="container">
+		<br/>
+		<hr/>
 
-	<!--Audio Files preloaded to avoid delays-->
-	<div ng-hide="true">
-		<audio preload="auto">
-			<source src="audio/composerChords/I.mp3">
-			<source src="audio/composerChords/II.mp3">
-			<source src="audio/composerChords/III.mp3">
-			<source src="audio/composerChords/IV.mp3">
-			<source src="audio/composerChords/V.mp3">
-			<source src="audio/composerChords/VI.mp3">
+		<div class="center improviserKeys">
+			
+		<!-- Standard Western Scale -->	
+			<a id="improviserKey" class="col s1 btn light-blue darken-3" ng-click="playI()">I</a>
+			<a id="improviserKey" class="col s1 btn light-blue darken-2" ng-click="playii()">ii</a>
+			<a id="improviserKey" class="col s1 btn light-blue darken-1" ng-click="playiii()">iii</a>
+			<a id="improviserKey" class="col s1 btn light-blue" ng-click="playIV()">IV</a>
+			<a id="improviserKey" class="col s1 btn light-blue lighten-1" ng-click="playV()">V</a>
+			<a id="improviserKey" class="col s1 btn light-blue lighten-2" ng-click="playvi()">vi</a>
+			<a id="improviserKey" class="col s1 btn light-blue lighten-3" ng-click="playvii()">vii°</a>
+		
+			<hr/>
 
-			<source src="audio/composerChords/minor-i.mp3">
-			<source src="audio/composerChords/minor-ii.mp3">
-			<source src="audio/composerChords/minor-iii.mp3">
-			<source src="audio/composerChords/minor-iv.mp3">
-			<source src="audio/composerChords/minor-v.mp3">
-			<source src="audio/composerChords/minor-vi.mp3">
-			<source src="audio/composerChords/minor-vii.mp3">
-		</audio>
+		<!-- Alternates -->
+			<a id="improviserKeyAlt" class="col s1 btn indigo darken-3" ng-click="playi()">i</a>
+			<a id="improviserKeyAlt" class="col s1 btn indigo darken-2" ng-click="playII()">II</a>
+			<a id="improviserKeyAlt" class="col s1 btn indigo darken-1" ng-click="playIII()">III</a>
+			<a id="improviserKeyAlt" class="col s1 btn indigo" ng-click="playiv()">iv</a>
+			<a id="improviserKeyAlt" class="col s1 btn indigo lighten-1" ng-click="playv()">v</a>
+			<a id="improviserKeyAlt" class="col s1 btn indigo lighten-2" ng-click="playVI()">VI</a>
+		</div>
+
+		<hr/>
+		
+		<div class="center">
+			<button type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
+		</div>
+
+
+		<!--Audio Files preloaded to avoid delays-->
+		<div ng-hide="true">
+			<audio preload="auto">
+				<source src="audio/composerChords/I.mp3">
+				<source src="audio/composerChords/II.mp3">
+				<source src="audio/composerChords/III.mp3">
+				<source src="audio/composerChords/IV.mp3">
+				<source src="audio/composerChords/V.mp3">
+				<source src="audio/composerChords/VI.mp3">
+
+				<source src="audio/composerChords/minor-i.mp3">
+				<source src="audio/composerChords/minor-ii.mp3">
+				<source src="audio/composerChords/minor-iii.mp3">
+				<source src="audio/composerChords/minor-iv.mp3">
+				<source src="audio/composerChords/minor-v.mp3">
+				<source src="audio/composerChords/minor-vi.mp3">
+				<source src="audio/composerChords/minor-vii.mp3">
+			</audio>
+		</div>
 	</div>
 
 </div>
