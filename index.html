@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 </head>
 
-<body ng-app="MusicTheory">
+<body ng-app="MusicTheory" id="improviserBackground">
 	
 	<div ng-include="'partials/navbar.html'"></div>
 	<div ng-view></div>
@@ -36,6 +36,8 @@
 
     <!--Controllers-->
     <script src="/javascripts/controllers/AuthCtrl.js"></script>
+    <script src="/javascripts/controllers/AboutCtrl.js"></script>
+    <script src="/javascripts/controllers/EarTrainingCtrl.js"></script>
     <script src="/javascripts/controllers/LessonsCtrl.js"></script>
     <script src="/javascripts/controllers/ComposerCtrl.js"></script>
     <script src="/javascripts/controllers/ImproviserCtrl.js"></script>
