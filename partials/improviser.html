@@ -1,27 +1,7 @@
 <div>
 
-	<div id="improviserTitle">
-		<h1>Improviser</h1>
-
-		<form>
-			<a class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
-				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
-					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
-			  		<label for="choice1">Basic Piano</label>
-				
-				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Brooding-Symphony" ng-click="hideLibrary=true">
-			  		<label for="choice2">Brooding Symphony</label>
-				
-				 
-					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="80s-Pleather-Antherm" ng-click="hideLibrary=true">
-			  		<label for="choice3">80s Pleather Anthem</label>
-				
-				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="The-Lounge" ng-click="hideLibrary=true">
-			  		<label for="choice4">The Lounge</label>	
-			  	</span>
-		</form>
+	<div>
+		<h1 id="improviserTitle">Improviser</h1>
 	</div>
 
 	<div class="container">
@@ -30,6 +10,10 @@
 
 		<div class="center improviserKeys">
 			
+		<!-- Bad Coding Below: -->
+			<!-- I'm reusing id's so that 'improviserKey(and Alt)' don't get removed when class changes (see ImproviserCtrl.js for various querySelectors) --> 
+			<!-- Need to correct in later version -->
+
 		<!-- Standard Western Scale -->	
 			<a id="improviserKey" class="col s1 btn light-blue darken-3" ng-click="playI()">I</a>
 			<a id="improviserKey" class="col s1 btn light-blue darken-2" ng-click="playii()">ii</a>
@@ -52,8 +36,8 @@
 
 		<hr/>
 		
-		<div class="center">
-			<button type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
+		<div class="center improviserKeys">
+			<button id="keyboardKey" type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
 		</div>
 
 
@@ -76,6 +60,31 @@
 				<source src="audio/composerChords/minor-vii.mp3">
 			</audio>
 		</div>
-	</div>
+	</div> <!-- Closes "container" class -->
 
+
+<!-- Back outside container, like h1 Title -->	
+	<br/>
+	<br/>
+	<div>
+		<form id="soundLibrary">
+			<a class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
+				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
+			  		<label for="choice1">Basic Piano</label>
+				
+				
+					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Brooding-Symphony" ng-click="hideLibrary=true">
+			  		<label for="choice2">Brooding Symphony</label>
+				
+				 
+					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="80s-Pleather-Antherm" ng-click="hideLibrary=true">
+			  		<label for="choice3">80s Pleather Anthem</label>
+				
+				
+					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="The-Lounge" ng-click="hideLibrary=true">
+			  		<label for="choice4">The Lounge</label>	
+			  	</span>
+		</form>
+	</div>	
 </div>
