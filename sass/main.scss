@@ -1,4 +1,29 @@
 /**************************************************************/
+/* Ear Training Styling */
+/**************************************************************/
+.chordCheckboxes {
+	label {
+		margin-right: 5%;
+	}
+}
+
+.earTrainingBorder {
+	border: 2px solid darkgrey;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px lightgrey;
+	background-color: #b2dfdb;	
+}
+
+.input-field {
+	.earTrainingInput1, .earTrainingInput2, .earTrainingInput3, .earTrainingInput4 {
+		background-color: white;
+		border-radius: 5px;
+		box-shadow: none;
+		text-align: center;
+	}
+}	
+
+/**************************************************************/
 /* Chord Composer Styling */
 /**************************************************************/
 

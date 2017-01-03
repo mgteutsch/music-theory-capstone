@@ -8,15 +8,25 @@ app.controller("ImproviserCtrl", function($q, $scope, $rootScope, $location){
 	angular.element(document.querySelectorAll('#navbar')).addClass("nav-wrapper pink accent-3");
 
 
-	//Drum Beat Player:
-	
+	//Drum Beat Player:	
 	$scope.drumBeatPlayer = function(){
 		$scope.drumBtnHider = true;
 
+		var testBeat = new Audio("audio/improviserLibrary/drumBeats/synth-drumbeat.mp3"); 
+			testBeat.play();
+		
+		$scope.drumBeatPause = function(){
+			testBeat.pause();
+			testBeat.currentTime = 0;
+			$scope.drumBtnHider = false;
+		};	
+
+
+/* Need to fix errors with this code:
 		var radioValue = angular.element(document.querySelector('input[name="soundChoice"]:checked')).val();		
 		console.log("DrumBeat ", radioValue);
 
-		if (radioValue == "'Basic-Piano'"){
+		if (radioValue == "Basic-Piano"){
 			var pianoBeat = new Audio("audio/improviserLibrary/drumBeats/basicPiano-drumbeat.mp3");
 			pianoBeat.play();
 
@@ -34,7 +44,8 @@ app.controller("ImproviserCtrl", function($q, $scope, $rootScope, $location){
 		} else {
 			var elseBeat = new Audio("audio/improviserLibrary/drumBeats/symphony-drumbeat.mp3"); 
 			elseBeat.play();
-		}	
+		}
+*/			
 	};
 
 	$scope.playI = function(){
