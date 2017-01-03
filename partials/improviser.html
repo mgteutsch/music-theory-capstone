@@ -35,11 +35,6 @@
 		</div>
 
 		<hr/>
-		
-		<div class="center improviserKeys">
-			<button id="keyboardKey" type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">Use Computer Keyboard</button>
-		</div>
-
 
 		<!--Audio Files preloaded to avoid delays-->
 		<div ng-hide="true">
@@ -66,9 +61,10 @@
 <!-- Back outside container, like h1 Title -->	
 	<br/>
 	<br/>
+	
 	<div>
-		<form id="soundLibrary">
-			<a class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
+		<form id="bottomOptions">
+			<a id="selectSounds" class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
 				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
 					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
 			  		<label for="choice1">Basic Piano</label>
@@ -86,5 +82,22 @@
 			  		<label for="choice4">The Lounge</label>	
 			  	</span>
 		</form>
-	</div>	
+	</div>
+
+	<br/>
+
+	<form id="bottomOptions">
+		<a id="drumBeat" class="waves-effect btn-flat">
+			<i class="large material-icons left">album</i>Drum Beat</a>
+	</form>
+
+	<br/>
+
+	<form id="bottomOptions">
+		<button id="useKeyboardKeys" class="waves-effect btn-flat" type="button" class="btn blue-grey darken-2" ng-keydown="$event.keyCode == 49 && playI() || $event.keyCode == 50 && playii() || $event.keyCode == 51 && playiii() || $event.keyCode == 52 && playIV() || $event.keyCode == 53 && playV() || $event.keyCode == 54 && playvi() || $event.keyCode == 55 && playvii() || $event.keyCode == 81 && playi() || $event.keyCode == 87 && playII() || $event.keyCode == 69 && playIII() || $event.keyCode == 82 && playiv() || $event.keyCode == 84 && playv() || $event.keyCode == 89 && playVI()">
+			<i class="large material-icons left">subtitles</i>Use Keyboard Keys
+		</button>
+
+	</form>	
+
 </div>

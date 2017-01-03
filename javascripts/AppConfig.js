@@ -64,8 +64,7 @@ app.config(function($routeProvider){
 		}) 
 		.when('/logout', {
 			templateUrl: 'partials/auth.html',
-			controller: 'AuthCtrl',
-			resolve: {isAuth}
+			controller: 'AuthCtrl'
 		})
 		.otherwise('/auth');
 });

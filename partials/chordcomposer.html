@@ -5,7 +5,7 @@
 <div class="container">
 
 	<div class="playerBorder">
-		<h3 class="center">Enter Chord Progression</h3>
+		<h3 id="playerHeader" class="center teal-text">Enter Chord Progression</h3>
 		<!-- <img src="http://i.imgur.com/KoDtOc7.gif" id="composerGIF"> -->
 		<div class="row input-field">
 			<a class="col s1"></a>
@@ -18,13 +18,13 @@
 			<input type="text" placeholder="4" class="newChordInput4 col s1" ng-model="newProgression.chord4">
 		</div>
 		<div class="row center">	
-			<a class="waves-effect waves-light btn" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true"><i class="material-icons left">play_arrow</i>Play</a>
+			<a id="playButton" class="waves-effect waves-light btn" ng-hide="revealPlayOrPause" ng-click="playProgression(newProgression); glowBoxes(); playDisabler=true"><i class="material-icons left">play_arrow</i>Play</a>
 			
-			<a class="waves-effect waves-light btn" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false"><i class="material-icons left">pause</i>Pause</a>
+			<a id="pauseButton" class="waves-effect waves-light btn" ng-hide="!revealPlayOrPause" ng-click="pauseProgression(newProgression); glowBoxesEnd(); playDisabler=false"><i class="material-icons left">pause</i>Pause</a>
 			
-			<a class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()"><i class="material-icons left">playlist_add</i>Save</a>
+			<a id="saveButton" class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="addNewProgression(newProgression); glowBoxes()"><i class="material-icons left">playlist_add</i>Save</a>
 
-			<a class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear</a>
+			<a id="clearButton" class="waves-effect waves-light btn" ng-disabled="playDisabler" ng-click="clearProgression(newProgression)">Clear</a>
 		</div>
 	</div>	
 

@@ -13,7 +13,18 @@
 
 .playerBorder {
 	border: 2px solid darkgrey;
-	border-radius: 5px;	
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px lightgrey;	
+	background-image: url("../images/chordComposer/playerBackground.jpg");
+	background-repeat: repeat-xy;
+}
+
+#playerHeader {
+	text-shadow: 1px 1px lightgrey;
+}
+
+#playButton, #pauseButton, #saveButton, #clearButton {
+	//background-color: #1de9b6;
 }
 
 
@@ -25,7 +36,7 @@
 		border: 2px solid darkgrey;
 		border-radius: 5px;
 		box-shadow: none;
-		background-color: none;
+		background-color: #424242;
 		text-align: center;
 	}
 
@@ -63,6 +74,10 @@
 	}
 }
 
+#selectSounds, #drumBeat, #useKeyboardKeys {
+	border-right: 1px solid grey;
+}
+
 //------------------------------------------------------------//
 
 .background-I {
@@ -78,16 +93,16 @@
 	background-color: #c51162;
 }
 
-.keyboardKey-I {
-	background-color: #880e4f;
-}
-
 .textColor-I {
 	color: white;
 }
 
-.soundLibrary-I {
+.bottomOptions-I {
 	background-color: white;
+}
+
+.navbarColor-I {
+	background-color: #f50057;
 }
 
 //------------------------------------------------------------//
@@ -105,15 +120,15 @@
 	background-color: #00bfa5;
 }
 
-.keyboardKey-ii {
-	background-color: #00695c;
-}
-
 .textColor-ii {
 	color: #00bfa5;
 }
 
-.soundLibrary-ii {
+.bottomOptions-ii {
+	background-color: #00bfa5;
+}
+
+.navbarColor-ii {
 	background-color: #00bfa5;
 }
 
@@ -132,16 +147,16 @@
 	background-color: #ff6d00;
 }
 
-.keyboardKey-iii {
-	background-color: #e65100;
-}
-
 .textColor-iii {
 	color: #ff6d00;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-iii {
+.bottomOptions-iii {
+	background-color: #ff6d00;
+}
+
+.navbarColor-iii {
 	background-color: #ff6d00;
 }
 
@@ -160,16 +175,16 @@
 	background-color: #03a9f4;
 }
 
-.keyboardKey-IV {
-	background-color: #0277bd;
-}
-
 .textColor-IV {
 	color: #4fc3f7;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-IV {
+.bottomOptions-IV {
+	background-color: #4fc3f7;
+}
+
+.navbarColor-IV {
 	background-color: #4fc3f7;
 }
 
@@ -188,15 +203,15 @@
 	background-color: #c51162;
 }
 
-.keyboardKey-V {
-	background-color: #880e4f;
-}
-
 .textColor-V {
 	color: #f50057;
 }
 
-.soundLibrary-V {
+.bottomOptions-V {
+	background-color: #f50057;
+}
+
+.navbarColor-V {
 	background-color: #f50057;
 }
 
@@ -215,15 +230,15 @@
 	background-color: #304ffe;
 }
 
-.keyboardKey-vi {
-	background-color: #283593;
-}
-
 .textColor-vi {
 	color: #536dfe;
 }
 
-.soundLibrary-vi {
+.bottomOptions-vi {
+	background-color: #536dfe;
+}
+
+.navbarColor-vi {
 	background-color: #536dfe;
 }
 
@@ -242,16 +257,16 @@
 	background-color: #fdd835;
 }
 
-.keyboardKey-vii {
-	background-color: #fbc02d;
-}
-
 .textColor-vii {
 	color: #fdd835;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-vii {
+.bottomOptions-vii {
+	background-color: #fdd835;
+}
+
+.navbarColor-vii {
 	background-color: #fdd835;
 }
 
@@ -274,15 +289,15 @@
 	background-color: #304ffe;
 }
 
-.keyboardKey-i {
-	background-color: #283593;
-}
-
 .textColor-i {
 	color: #304ffe;
 }
 
-.soundLibrary-i {
+.bottomOptions-i {
+	background-color: #304ffe;
+}
+
+.navbarColor-i {
 	background-color: #304ffe;
 }
 
@@ -301,17 +316,17 @@
 	background-color: #fbc02d;
 }
 
-.keyboardKey-II {
-	background-color: #f9a825;
-}
-
 .textColor-II {
 	color: #ffff8d;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-II {
+.bottomOptions-II {
 	background-color: #ffff8d;
+}
+
+.navbarColor-II {
+	background-color: #fbc02d;
 }
 
 //------------------------------------------------------------//
@@ -329,16 +344,16 @@
 	background-color: #f50057;
 }
 
-.keyboardKey-III {
-	background-color: #c51162;
-}
-
 .textColor-III {
 	color: #f50057;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-III {
+.bottomOptions-III {
+	background-color: #f50057;
+}
+
+.navbarColor-III {
 	background-color: #f50057;
 }
 
@@ -357,15 +372,15 @@
 	background-color: #00e5ff;
 }
 
-.keyboardKey-iv {
-	background-color: #00b8d4;
-}
-
 .textColor-iv {
 	color: #84ffff;
 }
 
-.soundLibrary-iv {
+.bottomOptions-iv {
+	background-color: #84ffff;
+}
+
+.navbarColor-iv {
 	background-color: #84ffff;
 }
 
@@ -384,16 +399,16 @@
 	background-color: #00bfa5;
 }
 
-.keyboardKey-v {
-	background-color: #00695c;
-}
-
 .textColor-v {
 	color: #00bfa5;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-v {
+.bottomOptions-v {
+	background-color: #00bfa5;
+}
+
+.navbarColor-v {
 	background-color: #00bfa5;
 }
 
@@ -412,16 +427,16 @@
 	background-color: #ffc400;
 }
 
-.keyboardKey-VI {
-	background-color: #ffab00;
-}
-
 .textColor-VI {
 	color: #ffc400;
 	text-shadow: 1px 1px lightgrey;
 }
 
-.soundLibrary-VI {
+.bottomOptions-VI {
+	background-color: #ffc400;
+}
+
+.navbarColor-VI {
 	background-color: #ffc400;
 }
 
