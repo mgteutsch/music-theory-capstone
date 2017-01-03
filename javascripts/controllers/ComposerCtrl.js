@@ -2,11 +2,15 @@
 
 app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, ComposerFactory){
 	
+	//On page load, remove any styling done by Improviser
+	angular.element(document.querySelectorAll('#overallBackground')).removeClass();
+	angular.element(document.querySelectorAll('#navbar')).removeClass();
+	angular.element(document.querySelectorAll('#navbar')).addClass("nav-wrapper pink accent-3");
+
 	//On page load, Saved Chord Progressions input fields need to be disabled:
 	$scope.buttonHider = false;
 	$scope.editDisabler = true;
 	
-
 
 /**************************************************************************************************/
 //GET, ADD, EDIT, & DELETE Chords:
