@@ -1,12 +1,12 @@
-<div class="container">
-	
-	<br/>
-	
-	<h5 class="col s8 offset-s2 brand-logo center"><i class="material-icons">equalizer</i>Smörgåschord</h5>
-
+<div>
+	<h4><i class="material-icons">equalizer</i>Smörgåschord</h4>
 	<hr/>
 	<br/>
+</div>
 
+
+<div class="container">
+	
 	<div class="row">
 		<a class="waves-effect waves-light btn col s4 offset-s2" ng-click="setLoginContainer()">Login</a>
 		<a class="waves-effect waves-light btn col s4" ng-click="setRegisterContainer()">Register</a>
@@ -14,7 +14,7 @@
 
 	<div class="row">
 	    <div class="col s8 offset-s2" ng-show="loginContainer">
-	    	<h3>LOGIN</h3>
+	    	<h5>LOGIN</h5>
 	    	<div class="input-field">
 	    		<input id="email_address" type="text" class="validate" ng-model="login.email" required autofocus>
           		<label for="email_address">Email Address</label>
@@ -29,7 +29,7 @@
 	    </div>
 	    
 	    <div class="col s8 offset-s2" ng-show="registerContainer">
-	    	<h3>REGISTER NEW USER</h3>
+	    	<h5>REGISTER NEW USER</h5>
 	    	<div class="input-field">
 	    		<input id="register_email" type="text" class="validate" ng-model="register.email" required autofocus>
           		<label for="register_email">Email Address</label>

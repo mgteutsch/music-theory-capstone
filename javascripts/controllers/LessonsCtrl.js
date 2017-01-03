@@ -7,4 +7,8 @@ app.controller("LessonsCtrl", function($q, $scope){
 	angular.element(document.querySelectorAll('#navbar')).removeClass();
 	angular.element(document.querySelectorAll('#navbar')).addClass("nav-wrapper pink accent-3");
 
+	$scope.scrollToTop = function(){
+		window.scrollTo(0,0);
+	};
+
 });
