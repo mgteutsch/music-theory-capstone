@@ -1,9 +1,3 @@
-#composerGIF {
-  height: 300px;
-  width: 600px;
-  border: 2px solid grey;
-  box-shadow: 5px 5px 5px lightgrey; }
-
 /**************************************************************/
 /* Chord Composer Styling */
 /**************************************************************/
@@ -15,7 +9,13 @@
   background-repeat: repeat-xy; }
 
 #playerHeader {
-  text-shadow: 1px 1px lightgrey; }
+  text-shadow: 1px 1px black; }
+
+#composerGIF {
+  height: 300px;
+  width: 600px;
+  border: 2px solid grey;
+  box-shadow: 5px 5px 5px lightgrey; }
 
 /* Glowing Boxes around Users New Chords */
 /*-----------------------------------------------------------*/
@@ -42,14 +42,37 @@
   padding-top: 4px; }
 
 /**************************************************************/
+/* Single Lessons Styling */
+/**************************************************************/
+.singleLessonBackground {
+  background-image: url("../images/singleLessons/singleLessonBackground.jpg");
+  background-repeat: repeat-xy; }
+
+.singleLessonContainer {
+  padding: 10px 10px 10px 10px; }
+  .singleLessonContainer p {
+    font-size: 100%; }
+
+.lessonChordBoxes {
+  height: 50px;
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  background-color: #607d8b; }
+  .lessonChordBoxes h5 {
+    font-size: 125%; }
+
+.lessonGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+/**************************************************************/
 /* Improviser Styling */
 /**************************************************************/
 .improviserKeys .btn {
   text-transform: none;
   box-shadow: 3px 3px 2px #888888; }
-
-#selectSounds, #drumBeat, #useKeyboardKeys {
-  border-right: 1px solid grey; }
 
 .background-I {
   background-image: url("../images/improviserBackgrounds/multicolorPixelStatic.jpg");

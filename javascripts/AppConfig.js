@@ -47,6 +47,12 @@ app.config(function($routeProvider){
 			controller: 'LessonsCtrl',
 			resolve: {isAuth}
 		})
+		//Individual Lesson URLs (in singleLessons folder) go here:
+				.when('/lessons/lesson_10_minor_ii', {
+					templateUrl: 'partials/singleLessons/minor-ii-chord-lesson.html',
+					controller: 'SingleLessonCtrl',
+					resolve: {isAuth}
+				})
 		.when('/eartraining', {
 			templateUrl: 'partials/eartraining.html',
 			controller: 'EarTrainingCtrl',
