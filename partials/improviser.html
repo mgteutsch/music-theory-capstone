@@ -66,20 +66,16 @@
 		<form id="bottomOptions">
 			<a id="selectSounds" class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
 				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
-					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="'Basic-Piano'" ng-click="hideLibrary=true" ng-model="librarySoundSelection" checked>
+					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="basicPiano" ng-click="hideLibrary=true" ng-model="librarySoundSelection" checked>
 			  		<label for="choice1">Basic Piano</label>
 				
 				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="'Brooding-Symphony'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="symphony" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
 			  		<label for="choice2">Brooding Symphony</label>
 				
 				 
-					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="'80s-Pleather-Anthem'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="synth" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
 			  		<label for="choice3">80s Pleather Anthem</label>
-				
-				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="'The-Lounge'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
-			  		<label for="choice4">The Lounge</label>	
 			  	</span>
 		</form>
 	</div>
