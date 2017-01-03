@@ -14,7 +14,7 @@ app.controller("SingleLessonCtrl", function($q, $scope){
 
 		$scope.ii_sample1_START = function(){
 	        audio_sample1.play();
-	        $scope.ii_revealPlayOrPause_1 = true;
+	        $scope.ii_sample1_revealPlayOrPause = true;
 
 	        //Glowing:
 	        let glowNextBox = function(){
@@ -84,7 +84,7 @@ app.controller("SingleLessonCtrl", function($q, $scope){
 			$scope.ii_sample1_END = function(){
 				audio_sample1.pause();
 				audio_sample1.currentTime = 0;
-				$scope.ii_revealPlayOrPause_1 = false;
+				$scope.ii_sample1_revealPlayOrPause = false;
 				angular.element(document.querySelector('#ii_chordBox1')).removeClass("lessonGlowBox");
 				angular.element(document.querySelector('#ii_chordBox2')).removeClass("lessonGlowBox");
 			};
@@ -99,16 +99,54 @@ app.controller("SingleLessonCtrl", function($q, $scope){
 
 		$scope.ii_sample2_START = function(){
 	        audio_sample2.play();
-	        $scope.ii_revealPlayOrPause_2 = true;
+	        $scope.ii_sample2_revealPlayOrPause = true;
+	        angular.element(document.querySelector('#ii_chordBox3')).addClass("lessonGlowBox");
 
 	        //Stop Audio:		
 			$scope.ii_sample2_END = function(){
 				audio_sample2.pause();
 				audio_sample2.currentTime = 0;
-				$scope.ii_revealPlayOrPause_2 = false;
+				$scope.ii_sample2_revealPlayOrPause = false;
 				angular.element(document.querySelector('#ii_chordBox3')).removeClass("lessonGlowBox");
-				angular.element(document.querySelector('#ii_chordBox4')).removeClass("lessonGlowBox");
 			};
-	    };    
+	    };
+
+
+	// Third Audio Sample (Sunday Morning) --------------------------
+	// --------------------------------------------------------------
+
+	/* ORIGINAL SONG */
+		var audio_sample3 = document.getElementById('ii_sample3');
+
+		$scope.ii_sample3_START = function(){
+	        audio_sample3.play();
+	        $scope.ii_sample3_revealPlayOrPause = true;
+	        angular.element(document.querySelector('#ii_chordBox6')).addClass("lessonGlowBox");
+
+	        //Stop Audio:		
+			$scope.ii_sample3_END = function(){
+				audio_sample3.pause();
+				audio_sample3.currentTime = 0;
+				$scope.ii_sample3_revealPlayOrPause = false;
+				angular.element(document.querySelector('#ii_chordBox6')).removeClass("lessonGlowBox");
+			};
+	    };
+
+	/* CLARIFY PROGRESSION */
+		var audio_sample4 = document.getElementById('ii_sample4');
+
+		$scope.ii_sample4_START = function(){
+	        audio_sample4.play();
+	        $scope.ii_sample4_revealPlayOrPause = true;
+	        angular.element(document.querySelector('#ii_chordBox10')).addClass("lessonGlowBox");
+
+	        //Stop Audio:		
+			$scope.ii_sample4_END = function(){
+				audio_sample4.pause();
+				audio_sample4.currentTime = 0;
+				$scope.ii_sample4_revealPlayOrPause = false;
+				angular.element(document.querySelector('#ii_chordBox10')).removeClass("lessonGlowBox");
+			};
+	    };             
 
 });
