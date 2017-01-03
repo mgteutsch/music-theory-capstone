@@ -2,6 +2,41 @@
 
 app.controller("ImproviserCtrl", function($q, $scope, $rootScope, $location){
 
+	//Reset any accidental Backgound/Navbar styling
+	angular.element(document.querySelectorAll('#overallBackground')).removeClass();
+	angular.element(document.querySelectorAll('#navbar')).removeClass();
+	angular.element(document.querySelectorAll('#navbar')).addClass("nav-wrapper pink accent-3");
+
+
+	//Drum Beat Player:
+	
+	$scope.drumBeatPlayer = function(){
+		$scope.drumBtnHider = true;
+
+		var radioValue = angular.element(document.querySelector('input[name="soundChoice"]:checked')).val();		
+		console.log("DrumBeat ", radioValue);
+
+		if (radioValue == "'Basic-Piano'"){
+			var pianoBeat = new Audio("audio/improviserLibrary/drumBeats/basicPiano-drumbeat.mp3");
+			pianoBeat.play();
+
+			$scope.drumBeatPause = function(){
+				pianoBeat.pause();
+				$scope.drumBtnHider = false;
+			};
+
+ 		} else if (radioValue == "Brooding-Symphony") {
+ 			var symphonyBeat = new Audio("audio/improviserLibrary/drumBeats/symphony-drumbeat.mp3");
+			symphonyBeat.play();
+ 		} else if (radioValue == "80s-Pleather-Anthem") {
+ 			var synthBeat = new Audio("audio/improviserLibrary/drumBeats/synth-drumbeat.mp3");
+			synthBeat.play();
+		} else {
+			var elseBeat = new Audio("audio/improviserLibrary/drumBeats/symphony-drumbeat.mp3"); 
+			elseBeat.play();
+		}	
+	};
+
 	$scope.playI = function(){
 		angular.element(document.querySelectorAll('#overallBackground')).removeClass();
 		angular.element(document.querySelectorAll('#overallBackground')).addClass("background-I");

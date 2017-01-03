@@ -66,19 +66,19 @@
 		<form id="bottomOptions">
 			<a id="selectSounds" class="waves-effect btn-flat" ng-click="hideLibrary=false"><i class="large material-icons left">library_music</i>Select Sound</a>	
 				<span ng-hide="hideLibrary" ng-init="hideLibrary=true">
-					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="Basic-Piano" ng-click="hideLibrary=true" checked>
+					<input type="radio" class="with-gap" name="soundChoice" id="choice1" value="'Basic-Piano'" ng-click="hideLibrary=true" ng-model="librarySoundSelection" checked>
 			  		<label for="choice1">Basic Piano</label>
 				
 				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="Brooding-Symphony" ng-click="hideLibrary=true">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice2" value="'Brooding-Symphony'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
 			  		<label for="choice2">Brooding Symphony</label>
 				
 				 
-					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="80s-Pleather-Antherm" ng-click="hideLibrary=true">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice3" value="'80s-Pleather-Anthem'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
 			  		<label for="choice3">80s Pleather Anthem</label>
 				
 				
-					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="The-Lounge" ng-click="hideLibrary=true">
+					<input type="radio" class="with-gap" name="soundChoice" id="choice4" value="'The-Lounge'" ng-click="hideLibrary=true" ng-model="libarySoundSelection">
 			  		<label for="choice4">The Lounge</label>	
 			  	</span>
 		</form>
@@ -87,8 +87,11 @@
 	<br/>
 
 	<form id="bottomOptions">
-		<a id="drumBeat" class="waves-effect btn-flat">
-			<i class="large material-icons left">album</i>Drum Beat</a>
+		
+		<a id="drumBeat" class="waves-effect btn-flat" ng-hide="drumBtnHider" ng-click="drumBeatPlayer()" ng-init="drumBtnHider=false"><i class="large material-icons left">album</i>Drum Beat</a>
+
+		<a id="drumBeatSTOP" class="waves-effect btn-flat" ng-hide="!drumBtnHider" ng-click="drumBeatPause()"><i class="large material-icons left">pause_circle_outline</i>Pause Beat</a>	
+
 	</form>
 
 	<br/>
