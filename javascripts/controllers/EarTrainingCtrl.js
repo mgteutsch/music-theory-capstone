@@ -11,6 +11,12 @@ app.controller("EarTrainingCtrl", function($q, $scope){
 	$scope.earTraining = {};
 
 
+	//For More Details Collapsible:
+	$(document).ready(function(){
+	    $('.collapsible').collapsible();
+	});
+
+
 	$scope.clearCheckboxes = function(){
 		$('input:checkbox').prop('checked', false);
 	};

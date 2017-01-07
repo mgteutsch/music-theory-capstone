@@ -1,112 +1,137 @@
-<div class="row">
-	<h1>Ear Training</h1>
-</div>
-
-<div class="container">
-	
-	<div class="earTrainingBorder">
-		<h4 id="earTrainingHeader" class="center">Enter What You Hear</h4>
-			<div class="row input-field">
-				<a class="col s1"></a>
-				<input type="text" placeholder="?" class="earTrainingInput1 col s1 black-text" ng-model="earTraining.chord1" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
-				<a class="col s2"></a>
-				<input type="text" placeholder="?" class="earTrainingInput2 col s1 black-text" ng-model="earTraining.chord2" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
-				<a class="col s2"></a>
-				<input type="text" placeholder="?" class="earTrainingInput3 col s1 black-text" ng-model="earTraining.chord3" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
-				<a class="col s2"></a>
-				<input type="text" placeholder="?" class="earTrainingInput4 col s1 black-text" ng-model="earTraining.chord4" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
-			</div>
-
-			<div class="row center">
-				<a id="earTrainingPlayButton" class="waves-effect waves-teal btn-flat white" ng-hide="earTrainingPlayOrPause" ng-click="earTrainingDeactivate=false; earTrainingPlayOrPause=true; earTrainingPlay()"><i class="material-icons left">play_arrow</i>Play</a>
-					
-				<a id="earTrainingPauseButton" class="waves-effect waves-teal btn-flat white" ng-hide="!earTrainingPlayOrPause" ng-click="earTrainingDeactivate=true; earTrainingPlayOrPause=false; earTrainingPause()"><i class="material-icons left">pause</i>Pause</a>
-
-				<a href="" id="earTrainingNextButton" class="waves-teal btn-flat white" ng-hide="nextSongHide" ng-click="earTrainingNextSong(earTraining)" ng-init="nextSongHide=true"><i class="material-icons left">input</i>Next Song</a>
-			</div>
+<div>	
+	<div class="row">
+		<h1>Ear Training</h1>
 	</div>
 
-	<div>
-		<ul id="answerSection" class="collapsible" data-collapsible="accordion">
-		    <li>
-		      <div id="answerButton" class="collapsible-header waves-effect waves-light" ng-click="checkAnswer(earTraining)"><i class="material-icons">done</i>Check Answer</div>
-		      <div id="answerResultBox" class="collapsible-body center"><p id="answerResultText"></p></div>
-		    </li>
-		</ul>    
+	<div class="container">
+		
+		<div class="earTrainingBorder">
+			<h4 id="earTrainingHeader" class="center">Enter What You Hear</h4>
+				<div class="row input-field">
+					<a class="col s1"></a>
+					<input type="text" placeholder="?" class="earTrainingInput1 col s1 black-text" ng-model="earTraining.chord1" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
+					<a class="col s2"></a>
+					<input type="text" placeholder="?" class="earTrainingInput2 col s1 black-text" ng-model="earTraining.chord2" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
+					<a class="col s2"></a>
+					<input type="text" placeholder="?" class="earTrainingInput3 col s1 black-text" ng-model="earTraining.chord3" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
+					<a class="col s2"></a>
+					<input type="text" placeholder="?" class="earTrainingInput4 col s1 black-text" ng-model="earTraining.chord4" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
+				</div>
 
-		<ul id="answerSection" class="collapsible" data-collapsible="accordion">
-		    <li>
-		    	<div class="collapsible-header waves-effect waves-light"><i class="material-icons">info_outline</i>What song is this?</div>
-		    	<div class="collapsible-body"><p><span>You're listening to </span><a href="https://www.youtube.com/watch?v=h5EofwRzit0">"Get Lucky" by Daft Punk</a></p></div>
-		    </li>	
+				<div class="row center">
+					<a id="earTrainingPlayButton" class="waves-effect waves-teal btn-flat white" ng-hide="earTrainingPlayOrPause" ng-click="earTrainingDeactivate=false; earTrainingPlayOrPause=true; earTrainingPlay()"><i class="material-icons left">play_arrow</i>Play</a>
+						
+					<a id="earTrainingPauseButton" class="waves-effect waves-teal btn-flat white" ng-hide="!earTrainingPlayOrPause" ng-click="earTrainingDeactivate=true; earTrainingPlayOrPause=false; earTrainingPause()"><i class="material-icons left">pause</i>Pause</a>
 
-		</ul> 
-	</div>	
+					<a href="" id="earTrainingNextButton" class="waves-teal btn-flat white" ng-hide="nextSongHide" ng-click="earTrainingNextSong(earTraining)" ng-init="nextSongHide=true"><i class="material-icons left">input</i>Next Song</a>
+				</div>
+		</div>
 
-	<audio id="earTrainingSong" src="/audio/lessonsAudio/lessons-ii-audio/getlucky-instrumental-and-vocals.mp3" type="audio/mpeg" preload="auto"></audio>
+		<div>
+			<ul id="answerSection" class="collapsible" data-collapsible="accordion">
+			    <li>
+			      <div id="answerButton" class="collapsible-header waves-effect waves-light" ng-click="checkAnswer(earTraining)"><i class="material-icons">done</i>Check Answer</div>
+			      <div id="answerResultBox" class="collapsible-body center"><p id="answerResultText"></p></div>
+			    </li>
+			</ul>    
+
+			<ul id="answerSection" class="collapsible" data-collapsible="accordion">
+			    <li>
+			    	<div class="collapsible-header waves-effect waves-light"><i class="material-icons">info_outline</i>What song is this?</div>
+			    	<div class="collapsible-body"><p><span>You're listening to </span><a href="https://www.youtube.com/watch?v=h5EofwRzit0">"Get Lucky" by Daft Punk</a></p></div>
+			    </li>	
+
+			</ul> 
+		</div>	
+
+		<audio id="earTrainingSong" src="/audio/lessonsAudio/lessons-ii-audio/getlucky-instrumental-and-vocals.mp3" type="audio/mpeg" preload="auto"></audio>
+
+		<br/>
+	<!-- For User to filter only the songs with chords they want to practice on -->
+		<h5>Filter Chords:</h5>	
+		<hr/>
+		<form>
+			<span class="chordCheckboxes">
+				<h6>Standard Western Scale:</h6>
+
+				<input type="checkbox" id="checkbox-I" checked="checked">
+				<label for="checkbox-I">I</label>
+			
+				<input type="checkbox" id="checkbox-ii" checked="checked">
+				<label for="checkbox-ii">ii</label>
+
+				<input type="checkbox" id="checkbox-iii" checked="checked">
+				<label for="checkbox-iii">iii</label>
+
+				<input type="checkbox" id="checkbox-IV" checked="checked">
+				<label for="checkbox-IV">IV</label>
+
+				<input type="checkbox" id="checkbox-V" checked="checked">
+				<label for="checkbox-V">V</label>
+
+				<input type="checkbox" id="checkbox-vi" checked="checked">
+				<label for="checkbox-vi">vi</label>
+
+				<input type="checkbox" id="checkbox-vii" checked="checked">
+				<label for="checkbox-vii">vii°</label>
+		    </span>
+		    
+		    <hr/>
+		    
+		    <span class="chordCheckboxes">
+				<h6>Alternate Chords:</h6>
+				
+				<input type="checkbox" id="checkbox-i" checked="checked">
+				<label for="checkbox-i">i</label>
+
+				<input type="checkbox" id="checkbox-II" checked="checked">
+				<label for="checkbox-II">II</label>
+
+				<input type="checkbox" id="checkbox-III" checked="checked">
+				<label for="checkbox-III">III</label>
+
+				<input type="checkbox" id="checkbox-iv" checked="checked">
+				<label for="checkbox-iv">iv</label>
+
+				<input type="checkbox" id="checkbox-v" checked="checked">
+				<label for="checkbox-v">v</label>
+
+				<input type="checkbox" id="checkbox-VI" checked="checked">
+				<label for="checkbox-VI">VI</label>
+		    </span>
+
+		    <hr/>
+
+		    <a id="clearCheckboxesBtn" class="waves-effect waves-light btn-flat right" ng-click="clearCheckboxes()">Clear</a>
+
+		    <a id="selectAllCheckboxesBtn" class="waves-effect waves-light btn-flat right" ng-click="selectAllCheckboxes()">Select All</a>
+
+		</form>
+		
+
+
+	</div>
+
+	<!--Very bottom of page -->
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+
+	<ul class="collapsible" data-collapsible="accordion">
+		<li>
+		  <div class="collapsible-header"><i class="material-icons">turned_in_not</i>More details about this page of the demo</div>
+		  <div class="collapsible-body">
+		  		<p>This page shows an example of an ear training exercise. For this demo, only one song will play ("Get Lucky" by Daft Punk), but the functionality still shows. Users can enter chords once the Play button is pressed, and they can click "Check Answer" to verify their chords. Correct answers will reveal blue, wrong answers will highlight in pink which chords are incorrect. The "Filter Chords" section is just a placeholder at this time. At full functionality, users can select only the chords they want to practice ear training with, and the app will play only songs clips that include the users' preferences.</p>
+		  		<p>Also note: the "glow box" functionality is limited at this time; the code is being rewritten from a timing function in Javascript to a looped-timer in CSS to have continuity throughout the whole song clip.</p>
+		  </div>
+		</li>
+	</ul> 
 
 	<br/>
-<!-- For User to filter only the songs with chords they want to practice on -->
-	<h5>Filter Chords:</h5>	
+	<br/>
+
 	<hr/>
-	<form>
-		<span class="chordCheckboxes">
-			<h6>Standard Western Scale:</h6>
-
-			<input type="checkbox" id="checkbox-I" checked="checked">
-			<label for="checkbox-I">I</label>
-		
-			<input type="checkbox" id="checkbox-ii" checked="checked">
-			<label for="checkbox-ii">ii</label>
-
-			<input type="checkbox" id="checkbox-iii" checked="checked">
-			<label for="checkbox-iii">iii</label>
-
-			<input type="checkbox" id="checkbox-IV" checked="checked">
-			<label for="checkbox-IV">IV</label>
-
-			<input type="checkbox" id="checkbox-V" checked="checked">
-			<label for="checkbox-V">V</label>
-
-			<input type="checkbox" id="checkbox-vi" checked="checked">
-			<label for="checkbox-vi">vi</label>
-
-			<input type="checkbox" id="checkbox-vii" checked="checked">
-			<label for="checkbox-vii">vii°</label>
-	    </span>
-	    
-	    <hr/>
-	    
-	    <span class="chordCheckboxes">
-			<h6>Alternate Chords:</h6>
-			
-			<input type="checkbox" id="checkbox-i" checked="checked">
-			<label for="checkbox-i">i</label>
-
-			<input type="checkbox" id="checkbox-II" checked="checked">
-			<label for="checkbox-II">II</label>
-
-			<input type="checkbox" id="checkbox-III" checked="checked">
-			<label for="checkbox-III">III</label>
-
-			<input type="checkbox" id="checkbox-iv" checked="checked">
-			<label for="checkbox-iv">iv</label>
-
-			<input type="checkbox" id="checkbox-v" checked="checked">
-			<label for="checkbox-v">v</label>
-
-			<input type="checkbox" id="checkbox-VI" checked="checked">
-			<label for="checkbox-VI">VI</label>
-	    </span>
-
-	    <hr/>
-
-	    <a id="clearCheckboxesBtn" class="waves-effect waves-light btn-flat right" ng-click="clearCheckboxes()">Clear</a>
-
-	    <a id="selectAllCheckboxesBtn" class="waves-effect waves-light btn-flat right" ng-click="selectAllCheckboxes()">Select All</a>
-
-	</form>
-	
-
-
+	<p class="center"><i class="material-icons">equalizer</i></p>
 </div>

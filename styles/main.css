@@ -94,6 +94,18 @@
   padding-top: 4px; }
 
 /**************************************************************/
+/*Lessons Homepage Styling */
+/**************************************************************/
+#lessonsNavbar {
+  background-image: url("../images/singleLessons/singleLessonBackground.jpg");
+  background-repeat: repeat-xy; }
+
+.selected {
+  border-bottom: thick solid #f50057;
+  color: #f50057;
+  text-shadow: 1px 1px black; }
+
+/**************************************************************/
 /* Single Lessons Styling */
 /**************************************************************/
 .singleLessonBackground {

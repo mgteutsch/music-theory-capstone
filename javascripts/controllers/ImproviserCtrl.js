@@ -7,6 +7,11 @@ app.controller("ImproviserCtrl", function($q, $scope, $rootScope, $location){
 	angular.element(document.querySelectorAll('#navbar')).removeClass();
 	angular.element(document.querySelectorAll('#navbar')).addClass("nav-wrapper pink accent-3");
 
+	//For More Details Collapsible:
+	$(document).ready(function(){
+	    $('.collapsible').collapsible();
+	});
+
 
 	//Drum Beat Player:	
 	$scope.drumBeatPlayer = function(){

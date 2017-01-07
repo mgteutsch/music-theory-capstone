@@ -11,6 +11,10 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 	$scope.buttonHider = false;
 	$scope.editDisabler = true;
 
+	//For More Details Collapsible:
+	$(document).ready(function(){
+	    $('.collapsible').collapsible();
+	});
 
 /**************************************************************************************************/
 //GET, ADD, EDIT, & DELETE Chords:
