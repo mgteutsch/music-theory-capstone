@@ -143,6 +143,25 @@
   height: 80%;
   width: 80%; }
 
+.input-field .quizInput1, .input-field .quizInput2, .input-field .quizInput3, .input-field .quizInput4 {
+  border-top: 2px solid darkgrey;
+  border-right: 2px solid darkgrey;
+  border-left: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: none;
+  text-align: center; }
+
+.input-field .quizInputCorrect {
+  background-color: #00b0ff; }
+
+.input-field .quizInputWrong {
+  background-color: #f50057; }
+
+.input-field .quizGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
 /**************************************************************/
 /* Improviser Styling */
 /**************************************************************/
