@@ -1,20 +1,53 @@
 /**************************************************************/
 /* Ear Training Styling */
 /**************************************************************/
-.chordCheckboxes label {
-  margin-right: 5%; }
+#earTrainingHeader {
+  text-shadow: 1px 1px black;
+  color: #eceff1; }
 
 .earTrainingBorder {
   border: 2px solid darkgrey;
   border-radius: 5px;
   box-shadow: 5px 5px 5px lightgrey;
-  background-color: #b2dfdb; }
+  background-image: url("../images/chordComposer/playerBackground.jpg");
+  background-repeat: repeat-xy; }
 
 .input-field .earTrainingInput1, .input-field .earTrainingInput2, .input-field .earTrainingInput3, .input-field .earTrainingInput4 {
-  background-color: white;
+  background-color: grey;
   border-radius: 5px;
   box-shadow: none;
   text-align: center; }
+
+.input-field .earTrainingGlowBox {
+  border: 2px solid yellow;
+  box-shadow: 0 0 20px yellow;
+  background-color: lightyellow; }
+
+.input-field .earTrainingInputCorrect {
+  background-color: #00b0ff; }
+
+.input-field .earTrainingInputWrong {
+  background-color: #f50057; }
+
+#answerSection {
+  border: 2px solid darkgrey;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px lightgrey; }
+
+.wrongAnswer {
+  background-color: #f50057; }
+  .wrongAnswer #answerResultText {
+    color: #f8bbd0;
+    font-size: 150%; }
+
+.correctAnswer {
+  background-color: #00b0ff; }
+  .correctAnswer #answerResultText {
+    color: #b3e5fc;
+    font-size: 150%; }
+
+.chordCheckboxes label {
+  margin-right: 5%; }
 
 /**************************************************************/
 /* Chord Composer Styling */
@@ -27,7 +60,8 @@
   background-repeat: repeat-xy; }
 
 #playerHeader {
-  text-shadow: 1px 1px black; }
+  text-shadow: 1px 1px black;
+  color: #eceff1; }
 
 #composerGIF {
   height: 300px;
@@ -41,7 +75,7 @@
   border: 2px solid darkgrey;
   border-radius: 5px;
   box-shadow: none;
-  background-color: #424242;
+  background-color: grey;
   text-align: center; }
 
 .input-field .glowBox {

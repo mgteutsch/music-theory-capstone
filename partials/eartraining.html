@@ -5,7 +5,7 @@
 <div class="container">
 	
 	<div class="earTrainingBorder">
-		<h4 id="earTrainingHeader" class="center teal-text">Enter What You Hear</h4>
+		<h4 id="earTrainingHeader" class="center">Enter What You Hear</h4>
 			<div class="row input-field">
 				<a class="col s1"></a>
 				<input type="text" placeholder="?" class="earTrainingInput1 col s1 black-text" ng-model="earTraining.chord1" ng-disabled="earTrainingDeactivate" ng-init="earTrainingDeactivate=true">
@@ -18,14 +18,30 @@
 			</div>
 
 			<div class="row center">
-				<a id="playButton" class="waves-effect waves-light btn" ng-hide="earTrainingPlayOrPause" ng-click="earTrainingDeactivate=false; earTrainingPlayOrPause=true; earTrainingPlay()"><i class="material-icons left">play_arrow</i>Play</a>
+				<a id="earTrainingPlayButton" class="waves-effect waves-teal btn-flat white" ng-hide="earTrainingPlayOrPause" ng-click="earTrainingDeactivate=false; earTrainingPlayOrPause=true; earTrainingPlay()"><i class="material-icons left">play_arrow</i>Play</a>
 					
-				<a id="pauseButton" class="waves-effect waves-light btn" ng-hide="!earTrainingPlayOrPause" ng-click="earTrainingDeactivate=true; earTrainingPlayOrPause=false; earTrainingPause()"><i class="material-icons left">pause</i>Pause</a>
+				<a id="earTrainingPauseButton" class="waves-effect waves-teal btn-flat white" ng-hide="!earTrainingPlayOrPause" ng-click="earTrainingDeactivate=true; earTrainingPlayOrPause=false; earTrainingPause()"><i class="material-icons left">pause</i>Pause</a>
 
-				<a id="answerButton" class="waves-effect waves-light btn" ng-click="checkAnswer(earTraining)"><i class="material-icons left">done</i>Check Answer</a>
-
+				<a href="" id="earTrainingNextButton" class="waves-teal btn-flat white" ng-hide="nextSongHide" ng-click="earTrainingNextSong(earTraining)" ng-init="nextSongHide=true"><i class="material-icons left">input</i>Next Song</a>
 			</div>
 	</div>
+
+	<div>
+		<ul id="answerSection" class="collapsible" data-collapsible="accordion">
+		    <li>
+		      <div id="answerButton" class="collapsible-header waves-effect waves-light" ng-click="checkAnswer(earTraining)"><i class="material-icons">done</i>Check Answer</div>
+		      <div id="answerResultBox" class="collapsible-body center"><p id="answerResultText"></p></div>
+		    </li>
+		</ul>    
+
+		<ul id="answerSection" class="collapsible" data-collapsible="accordion">
+		    <li>
+		    	<div class="collapsible-header waves-effect waves-light"><i class="material-icons">info_outline</i>What song is this?</div>
+		    	<div class="collapsible-body"><p><span>You're listening to </span><a href="https://www.youtube.com/watch?v=h5EofwRzit0">"Get Lucky" by Daft Punk</a></p></div>
+		    </li>	
+
+		</ul> 
+	</div>	
 
 	<audio id="earTrainingSong" src="/audio/lessonsAudio/lessons-ii-audio/getlucky-instrumental-and-vocals.mp3" type="audio/mpeg" preload="auto"></audio>
 

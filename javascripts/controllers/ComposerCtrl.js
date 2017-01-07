@@ -10,7 +10,7 @@ app.controller("ComposerCtrl", function($q, $scope, $rootScope, $location, Compo
 	//On page load, Saved Chord Progressions input fields need to be disabled:
 	$scope.buttonHider = false;
 	$scope.editDisabler = true;
-	
+
 
 /**************************************************************************************************/
 //GET, ADD, EDIT, & DELETE Chords:
