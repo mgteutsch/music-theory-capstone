@@ -12,10 +12,10 @@ app.controller("AuthCtrl", function($scope, $location, $rootScope, AuthFactory, 
 	$scope.registerContainer = false;
 
 
-	$scope.login = {
-		email: "a@a.com",
-		password: "123456"
-	};
+	// $scope.login = {
+	// 	email: "a@a.com",
+	// 	password: "123456"
+	// };
 
 
 
