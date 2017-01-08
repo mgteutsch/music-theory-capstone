@@ -1,27 +1,81 @@
 /**************************************************************/
+/* About Page Styling */
+/**************************************************************/
+
+
+/**************************************************************/
 /* Ear Training Styling */
 /**************************************************************/
-.chordCheckboxes {
-	label {
-		margin-right: 5%;
-	}
+
+#earTrainingHeader {
+	text-shadow: 1px 1px black;
+	color: #eceff1;
 }
 
 .earTrainingBorder {
 	border: 2px solid darkgrey;
 	border-radius: 5px;
 	box-shadow: 5px 5px 5px lightgrey;
-	background-color: #b2dfdb;	
+	background-image: url("../images/chordComposer/playerBackground.jpg");
+	background-repeat: repeat-xy;
 }
 
 .input-field {
 	.earTrainingInput1, .earTrainingInput2, .earTrainingInput3, .earTrainingInput4 {
-		background-color: white;
+		background-color: grey;
 		border-radius: 5px;
 		box-shadow: none;
 		text-align: center;
 	}
+
+	.earTrainingGlowBox {
+		border: 2px solid yellow;
+		box-shadow: 0 0 20px yellow;
+		background-color: lightyellow;
+	}
+
+	.earTrainingInputCorrect {
+		background-color: #00b0ff;
+	}
+
+	.earTrainingInputWrong {
+		background-color: #f50057;
+	}
 }	
+
+#answerSection {
+	border: 2px solid darkgrey;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px lightgrey;
+}
+
+.wrongAnswer {
+	background-color: #f50057; 
+
+	#answerResultText {
+		color: #f8bbd0;
+		font-size: 150%;
+	} 
+
+
+}
+
+.correctAnswer {
+	background-color: #00b0ff;
+
+	#answerResultText {
+		color: #b3e5fc;
+		font-size: 150%;
+	} 
+}
+
+.chordCheckboxes {
+	label {
+		margin-right: 5%;
+	}
+}
+
+
 
 /**************************************************************/
 /* Chord Composer Styling */
@@ -37,6 +91,7 @@
 
 #playerHeader {
 	text-shadow: 1px 1px black;
+	color: #eceff1;
 }
 
 #playButton, #pauseButton, #saveButton, #clearButton {
@@ -61,7 +116,7 @@
 		border: 2px solid darkgrey;
 		border-radius: 5px;
 		box-shadow: none;
-		background-color: #424242;
+		background-color: grey;
 		text-align: center;
 	}
 
@@ -88,6 +143,22 @@
 	padding-top: 4px;
 }
 
+
+
+/**************************************************************/
+/*Lessons Homepage Styling */
+/**************************************************************/
+
+#lessonsNavbar {
+	background-image: url("../images/singleLessons/singleLessonBackground.jpg");
+	background-repeat: repeat-xy;
+}
+
+.selected {
+	border-bottom: thick solid #f50057;
+	color: #f50057;
+	text-shadow: 1px 1px black;
+}
 
 
 /**************************************************************/
@@ -143,6 +214,36 @@
 	height: 80%;
 	width: 80%;
 }
+
+
+//QUIZ SECTION
+
+.input-field {
+	.quizInput1, .quizInput2, .quizInput3, .quizInput4 { 
+		border-top: 2px solid darkgrey;
+		border-right: 2px solid darkgrey;
+		border-left: 2px solid darkgrey;
+		border-radius: 5px;
+		box-shadow: none;
+		text-align: center;
+	}
+
+	.quizInputCorrect {
+		background-color: #00b0ff;
+	}
+
+	.quizInputWrong {
+		background-color: #f50057; 
+	}	
+
+	.quizGlowBox {
+		border: 2px solid yellow;
+		box-shadow: 0 0 20px yellow;
+		background-color: lightyellow;
+	}
+}
+
+
 
 
 /**************************************************************/

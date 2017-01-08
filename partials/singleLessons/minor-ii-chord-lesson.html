@@ -264,4 +264,72 @@
 <!-- ***************************************************************************************** -->
 <!-- ***************************************************************************************** -->	
 
+	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p> 
+	<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+	<p>Alright, so if you feel ready, go ahead and try out the quiz below. You can have extra practice in the Ear Training and Chord Composer sections as well!</p>
+
+	<hr/>
+
+<!-- QUIZ SECTION ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+	<hr/>
+	<div class="center">
+		<h4>Quiz Time!</h4>
+		<hr/>
+		<h5>Enter what you hear in the spaces below.</h5>
+	</div>
+	<hr/>
+	<hr/>
+
+	<div>
+		<ul id="quizSection" class="collapsible" data-collapsible="accordion">
+			<li>
+				<div id="quizLabel" class="collapsible-header waves-effect waves-light pink accent-3"><i class="material-icons">offline_pin</i>Let's do this!</div>
+				<div id="quizBox" class="collapsible-body">
+					<p>						
+						<audio id="ii_quiz" src="/audio/lessonsAudio/lessons-ii-audio/feist-outro.mp3" type="audio/mpeg" preload="auto"></audio>
+						
+						<div>
+							<div class="row input-field">
+								<a class="col s1"></a>
+								<input type="text" id="quiz1" placeholder="?" class="quizInput1 col s1 black-text" ng-model="quiz.chord1">
+								<a class="col s2"></a>
+								<input type="text" id="quiz2" placeholder="?" class="quizInput2 col s1 black-text" ng-model="quiz.chord2">
+								<a class="col s2"></a>
+								<input type="text" id="quiz3" placeholder="?" class="quizInput3 col s1 black-text" ng-model="quiz.chord3">
+								<a class="col s2"></a>
+								<input type="text" id="quiz4" placeholder="?" class="quizInput4 col s1 black-text" ng-model="quiz.chord4">
+							</div>
+
+							<div class="row center">
+								<a id="quizPlayButton" class="waves-effect waves-teal btn-flat white" ng-hide="quizPlayOrPause" ng-click="quizPlayOrPause=true; quizPlay()"><i class="material-icons left">play_arrow</i>Play</a>
+									
+								<a id="quizPauseButton" class="waves-effect waves-teal btn-flat white" ng-hide="!quizPlayOrPause" ng-click="quizPlayOrPause=false; quizPause(); quiz_glowSTOP()"><i class="material-icons left">pause</i>Pause</a>
+
+								<a id="quizAnswerButton" class="waves-effect waves-teal btn-flat white" ng-click="checkQuizAnswer(quiz)"><i class="material-icons left">done</i>Check Answer</a>
+
+								<a href="" id="quizNextButton" class="waves-teal btn-flat white" ng-click="nextQuizSong(quiz)"><i class="material-icons left">input</i>Next Song</a>
+							</div>
+						</div>
+
+
+						<ul class="pagination center">
+							<li class="waves-effect"><a href=""><i class="material-icons">chevron_left</i></a></li>
+							<li class="active"><a href="">1</a></li>
+							<li class="waves-effect"><a href="">2</a></li>
+							<li class="waves-effect"><a href="">3</a></li>
+							<li class="waves-effect"><a href="">4</a></li>
+							<li class="waves-effect"><a href="">5</a></li>
+							<li class="waves-effect"><a href=""><i class="material-icons">chevron_right</i></a></li>
+						</ul>
+
+					</p>	
+				</div>
+			</li>
+		</ul>    
+
+
+	</div>		
+
+
 </div>
